@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">appGoodLiving2</string>
+    <string name="title_activity_maps">Google Map</string>
+    <string name="app_name2">好住民宿</string>
+    
+    <string-array name="attraction_igurl">
+        <item>https://www.instagram.com/explore/locations/258740180/</item>
+        <item>https://www.instagram.com/explore/locations/279259633/</item>
+        <item>https://www.instagram.com/explore/locations/326553797/</item>
+        <item>https://www.instagram.com/explore/locations/42834715/</item>
+
+
+
+
+    </string-array>
+
+    <string-array name="attraction_fburl">
+        <item>https://zh-tw.facebook.com/beigangmatsu/</item>
+        <item>https://zh-tw.facebook.com/Saintarthotel/posts/735296423343129</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E5%A5%B3%E5%85%92%E6%A9%8B/374047869690457</item>
+        <item>https://zh-tw.facebook.com/pages/%E5%8C%97%E6%B8%AF%E7%89%9B%E5%A2%9F/194413240581964</item>
+
+    </string-array>
+
+
+</resources>

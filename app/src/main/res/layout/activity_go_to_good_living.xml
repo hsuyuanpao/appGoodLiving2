@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:padding="5dp"
+    tools:context=".GoToGoodLivingActivity">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/photo_view1"
+        android:layout_width="wrap_content"
+        android:layout_height="230dp"
+
+        android:scaleType="fitCenter"
+        android:src="@drawable/namecard1" />
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/photo_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="230dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="108dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/namecard2"
+        />
+
+    <LinearLayout
+        android:layout_width="377dp"
+        android:layout_height="99dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:padding="5dp"
+
+        android:background="#ffffff"
+        android:weightSum="100">
+
+      <!--  <Button
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:background="#356789"
+            android:elevation="10dp"
+            android:onClick="GoToGoodLivingWebsite"
+            android:layout_marginRight="5dp"
+            android:stateListAnimator="@null"
+            android:text="前往->\n好住民宿網頁"
+            android:textColor="#bbbbbb"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:translationZ="10dp" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:background="#ffa500"
+            android:elevation="10dp"
+            android:onClick="GoToGoodLivingBackpackWebsite"
+            android:padding="5dp"
+            android:stateListAnimator="@null"
+            android:text="前往->\n好住背包客棧網頁"
+            android:textColor="#065535"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+            android:translationZ="10dp" />  -->
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="49"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn2_t"
+            android:elevation="5dp"
+            android:padding="5dp"
+            android:translationZ="5dp"
+            android:onClick="GoToGoodLivingWebsite"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="49"
+            android:layout_height="wrap_content"
+            android:src="@drawable/green_btn1_t"
+            android:onClick="GoToGoodLivingBackpackWebsite"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_attractions"
+            android:icon="@drawable/ic_visibility_black_24dp"
+            android:title="週邊景點介紹"/>
+
+        <item
+            android:id="@+id/nav_recommendation"
+            android:icon="@drawable/ic_thumb_up_black_24dp"
+            android:title="吃喝玩樂推薦"/>
+
+        <item
+            android:id="@+id/nav_hodua"
+            android:icon="@drawable/ic_trending_up_black_24dp"
+            android:title="前往好住網頁"/>
+
+        <item
+            android:id="@+id/nav_qrcode"
+            android:icon="@drawable/ic_qrcode_scan"
+            android:title="QRCode掃描"/>
+
+        <item
+            android:id="@+id/nav_traffic_information"
+            android:icon="@drawable/ic_directions_bus_black_24dp"
+            android:title="交通資訊報馬仔"/>
+
+    </group>
+
+</menu>
