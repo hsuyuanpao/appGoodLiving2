@@ -33,14 +33,24 @@
                 android:value=".AttrcationsNearByCVActivity"></meta-data>
         </activity>
         <activity android:name=".QRCodeScanActivity" />
-        <activity android:name=".GoToGoodLivingActivity" />
+        <activity android:name=".GoToGoodLivingActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"></meta-data>
+        </activity>
         <activity android:name=".AttrcationsNearByCVActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"></meta-data>
         </activity>
-        <activity android:name=".GoToGoodLivingWebsiteActivity" />
+        <activity android:name=".GoToGoodLivingWebsiteActivity"
+            android:parentActivityName=".GoToGoodLivingActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GoToGoodLivingActivity"></meta-data>
+        </activity>
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -71,7 +81,12 @@
                 android:value=".DisplayActivity"></meta-data>
         </activity>
         <activity android:name=".ShowLogoActivity" />
-        <activity android:name=".GoToGoodLivingBackpackWebsiteActivity" />
+        <activity android:name=".GoToGoodLivingBackpackWebsiteActivity"
+            android:parentActivityName=".GoToGoodLivingActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GoToGoodLivingActivity"></meta-data>
+        </activity>
         <activity android:name=".IGActivity"
             android:parentActivityName=".DisplayActivity">
             <meta-data

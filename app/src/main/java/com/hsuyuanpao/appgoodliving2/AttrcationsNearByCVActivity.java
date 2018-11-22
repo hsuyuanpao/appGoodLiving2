@@ -27,6 +27,7 @@ public class AttrcationsNearByCVActivity extends AppCompatActivity{
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("週邊景點介紹");
         actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_back);
 
         ArrayList image_title = new ArrayList<>();
         ArrayList image_description = new ArrayList<>();
@@ -36,7 +37,7 @@ public class AttrcationsNearByCVActivity extends AppCompatActivity{
         image_title.add("女兒橋");
         image_title.add("牛墟");
         image_title.add("北港水道頭");
-        image_title.add("公館里彩繪社后");
+        image_title.add("公館里彩繪社區");
         image_title.add("北港工藝坊");
         image_title.add("武德宮");
         image_title.add("北港觀光大橋");

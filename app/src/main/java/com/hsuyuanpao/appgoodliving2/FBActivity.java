@@ -23,6 +23,7 @@ public class FBActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_back);
         String title = getIntent().getStringExtra("title");
         actionBar.setTitle(title);
 

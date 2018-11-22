@@ -22,7 +22,8 @@ public class DisplayActivity extends AppCompatActivity {
             R.drawable.cattlemarket, R.drawable.watertower, R.drawable.drawingcommunity,
             R.drawable.workshop, R.drawable.wudetemple, R.drawable.bridge, R.drawable.yimintemple};
     private int[] imMap = {R.drawable.temple_map, R.drawable.oldstreet_map, R.drawable.daughterbridge_map,
-                        R.drawable.cattlemarket_map};
+                        R.drawable.cattlemarket_map, R.drawable.watertower_map, R.drawable.drawingcommunity_map,
+                        R.drawable.workshop_map, R.drawable.wudetemple_map, R.drawable.bridge_map, R.drawable.yimintemple_map};
 
     ImageView imageView;
     ImageView imageView2;
@@ -50,6 +51,7 @@ public class DisplayActivity extends AppCompatActivity {
         //Toast.makeText(this, "title = "+r_title, Toast.LENGTH_SHORT).show();;
         actionBar.setTitle(r_title);
         actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_back);
 
         imageView = findViewById(R.id.imageDisplay);
         imageView2 = findViewById(R.id.imageDisplay2);

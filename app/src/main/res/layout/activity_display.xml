@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
-    android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-<RelativeLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:scrollbars="vertical"
-
-    tools:context=".DisplayActivity">
-
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".DisplayActivity" >
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -26,167 +17,9 @@
             />
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
-        android:id="@+id/textTitle"
+    <include layout="@layout/activity_display_core"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:text="名稱"
-        android:textStyle="bold"
-        android:textSize="32sp"
-        android:gravity="center"/>
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-    <!--<ImageView
-        android:id="@+id/imageDisplay"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:padding="10dp"
-        android:elevation="5dp"
-        android:translationZ="5dp"
-        android:layout_below="@+id/textTitle"/> -->
-
-    <android.support.v7.widget.CardView
-        android:layout_gravity="center"
-        app:cardElevation="10dp"
-        app:cardBackgroundColor="@android:color/transparent"
-        android:layout_width="400dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        app:cardCornerRadius="5dp"
-        android:layout_height="300dp"
-        android:layout_below="@+id/textTitle"
-        android:id="@+id/cardView">
-
-        <ImageView
-            android:id="@+id/imageDisplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:contentDescription="@null"
-            />
-
-    </android.support.v7.widget.CardView>
-    <TextView
-        android:id="@+id/textDesc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cardView"
-        android:text="說明"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:scrollbars="vertical"/>
-
-    <android.support.v7.widget.CardView
-        android:layout_gravity="center"
-        app:cardElevation="10dp"
-        app:cardBackgroundColor="@android:color/transparent"
-        android:layout_width="400dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        app:cardCornerRadius="5dp"
-        android:layout_height="300dp"
-        android:layout_below="@+id/textDesc"
-        android:id="@+id/cardView2">
-
-        <ImageView
-            android:id="@+id/imageDisplay2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:contentDescription="@null"
-            />
-
-    </android.support.v7.widget.CardView>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:weightSum="100"
-        android:layout_below="@+id/cardView2">
-
-<!--
-          <TextView
-                android:id="@+id/textMap"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="40"
-                android:text="前往Google Map >>"
-
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:gravity="left"
-                android:textColor="@drawable/textview_click_color"
-                android:clickable="true"
-                android:onClick="GoToMapsActivity"
-                />
-            <TextView
-                android:id="@+id/textIG"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="30"
-                android:text="前往IG >>"
-                android:textColor="@drawable/textview_click_color"
-                android:clickable="true"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:gravity="right"
-
-                android:onClick="GoToIGActivity"
-                />
-            <TextView
-                android:id="@+id/textFB"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="30"
-                android:text="前往FB >>"
-                android:textColor="@drawable/textview_click_color"
-                android:clickable="true"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:gravity="right"
-
-                android:onClick="GoToFBActivity"
-                />
--->
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_weight="33"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:id="@+id/maplogo"
-            android:src="@drawable/google_map_logo2"
-            android:onClick="GoToMapsActivity"/>
-
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_weight="33"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:id="@+id/iglogo"
-            android:src="@drawable/ig_logo2"
-
-
-            android:onClick="GoToIGActivity"/>
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_weight="33"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:id="@+id/fblogo"
-            android:src="@drawable/fb_logo2"
-            android:layout_marginRight="5dp"
-            android:onClick="GoToFBActivity"/>
-
-
-    </LinearLayout>
-
-</RelativeLayout>
-</android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

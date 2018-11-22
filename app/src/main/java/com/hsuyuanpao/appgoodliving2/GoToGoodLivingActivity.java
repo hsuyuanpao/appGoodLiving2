@@ -1,8 +1,10 @@
 package com.hsuyuanpao.appgoodliving2;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -15,6 +17,14 @@ public class GoToGoodLivingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_go_to_good_living);
+
+        Toolbar toolbar = findViewById(R.id.toolBar7);
+        setSupportActionBar(toolbar);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("請按本頁下方前往好住網頁");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_back);
 
        // WebView mWebView = findViewById(R.id.webView);
         //mWebView.loadUrl("http://www.0932587227.com.tw");
