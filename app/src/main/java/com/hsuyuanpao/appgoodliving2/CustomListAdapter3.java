@@ -32,6 +32,7 @@ public class CustomListAdapter3  extends ArrayAdapter<String>{
         TextView title;
         TextView description;
         ImageView image;
+        ImageView arrow;
         //int position;
     }
 
@@ -55,6 +56,7 @@ public class CustomListAdapter3  extends ArrayAdapter<String>{
             holder.title = view.findViewById(R.id.cardTitle);
             holder.description = view.findViewById(R.id.cardDescription);
             holder.image = view.findViewById(R.id.cardImage);
+            holder.arrow = view.findViewById(R.id.right_arrow);
             view.setTag(holder);
 
         }
@@ -86,6 +88,11 @@ public class CustomListAdapter3  extends ArrayAdapter<String>{
             Glide.with(context)
                     .load(img[position])
                     .into(holder.image);
+
+            Glide.with(context)
+                    .load(R.drawable.right_arrow8)
+                    .into(holder.arrow);
+
 
         }
         catch(Exception e){
