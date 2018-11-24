@@ -89,9 +89,9 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.nav_recommendation:
                         menuItem.setChecked(true);
-                        displayMessage("吃喝玩樂推薦");
+                        displayMessage("吃吃喝喝推薦");
                         drawerLayout.closeDrawers();
-                        Intent intent4 = new Intent(MainActivity.this, MapsActivity.class);
+                        Intent intent4 = new Intent(MainActivity.this, EatActivity.class);
                         Log.d(TAG,"MapsActivity: is preparing to run...");
                         startActivity(intent4);
                         return true;
@@ -106,30 +106,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-/*    public void GoToNearbyAttractions(View view) {
-        Log.d(TAG,"GoToNearbyAttractions: is reparing to run...");
-        Intent intent = new Intent(this, AttrcationsNearByCVActivity.class);
-        startActivity(intent);
-    }
-
-    public void QRCodeScan(View view) {
-        Log.d(TAG,"RCodeScan: is reparing to run...");
-        Intent intent = new Intent(this, QRCodeScanActivity.class);
-        startActivity(intent);
-    }
-
-    public void GoToGoodLiving(View view) {
-        Log.d(TAG,"GoToGoodLiving: is reparing to run...");
-        Intent intent = new Intent(this,GoToGoodLivingActivity.class);
-        startActivity(intent);
-    }
-
-    public void MapsActivity(View view) {
-        Log.d(TAG,"MapsActivity: is preparing to run...");
-        Intent intent = new Intent(this, MapsActivity.class);
-        startActivity(intent);
-    }
-*/
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId())
