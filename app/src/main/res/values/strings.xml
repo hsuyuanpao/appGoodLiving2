@@ -2,7 +2,7 @@
     <string name="app_name">appGoodLiving2</string>
     <string name="title_activity_maps">Google Map</string>
     <string name="app_name2">好住民宿</string>
-    
+
     <string-array name="attraction_igurl">
         <item>https://www.instagram.com/explore/locations/258740180/</item>
         <item>https://www.instagram.com/explore/locations/279259633/</item>
@@ -14,8 +14,6 @@
         <item>https://www.instagram.com/explore/locations/213556969/-/</item>
         <item>http://picdeer.com/tag/%E5%8C%97%E6%B8%AF%E8%A7%80%E5%85%89%E5%A4%A7%E6%A9%8B</item>
         <item>https://www.instagweb.com/tag/%E5%8C%97%E6%B8%AF</item>
-
-
 
 
     </string-array>

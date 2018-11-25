@@ -26,30 +26,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DisplayActivity"
+        <activity
+            android:name=".DisplayActivity"
             android:parentActivityName=".AttrcationsNearByCVActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".AttrcationsNearByCVActivity"></meta-data>
+                android:value=".AttrcationsNearByCVActivity" />
         </activity>
         <activity android:name=".QRCodeScanActivity" />
-        <activity android:name=".GoToGoodLivingActivity"
+        <activity
+            android:name=".GoToGoodLivingActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"></meta-data>
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".AttrcationsNearByCVActivity"
+        <activity
+            android:name=".AttrcationsNearByCVActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"></meta-data>
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".GoToGoodLivingWebsiteActivity"
+        <activity
+            android:name=".GoToGoodLivingWebsiteActivity"
             android:parentActivityName=".GoToGoodLivingActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".GoToGoodLivingActivity"></meta-data>
+                android:value=".GoToGoodLivingActivity" />
         </activity>
 
         <!--
@@ -78,27 +82,43 @@
             android:parentActivityName=".DisplayActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DisplayActivity"></meta-data>
+                android:value=".DisplayActivity" />
         </activity>
         <activity android:name=".ShowLogoActivity" />
-        <activity android:name=".GoToGoodLivingBackpackWebsiteActivity"
+        <activity
+            android:name=".GoToGoodLivingBackpackWebsiteActivity"
             android:parentActivityName=".GoToGoodLivingActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".GoToGoodLivingActivity"></meta-data>
+                android:value=".GoToGoodLivingActivity" />
         </activity>
-        <activity android:name=".IGActivity"
+        <activity
+            android:name=".IGActivity"
             android:parentActivityName=".DisplayActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DisplayActivity"></meta-data>
+                android:value=".DisplayActivity" />
         </activity>
-        <activity android:name=".FBActivity"
+        <activity
+            android:name=".FBActivity"
             android:parentActivityName=".DisplayActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DisplayActivity"></meta-data>
+                android:value=".DisplayActivity" />
         </activity>
+        <activity
+            android:name=".EatActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".GoToBreakfastActivity"
+            android:parentActivityName=".EatActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".EatActivity" />
+        </activity>>
     </application>
 
 </manifest>

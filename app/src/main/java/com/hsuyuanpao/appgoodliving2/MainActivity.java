@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.nav_recommendation:
                         menuItem.setChecked(true);
-                        displayMessage("吃吃喝喝推薦");
+                       //displayMessage("吃吃喝喝推薦");
                         drawerLayout.closeDrawers();
                         Intent intent4 = new Intent(MainActivity.this, EatActivity.class);
                         Log.d(TAG,"MapsActivity: is preparing to run...");
