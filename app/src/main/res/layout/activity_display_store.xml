@@ -5,24 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GoToGoodLivingActivity">
+    tools:context=".DisplayStoreActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/appBarBackpack">
+        android:id="@+id/appBarDisplayStore">
         <include
             layout="@layout/toolbar_layout"
-            android:id="@+id/toolBar8"
+            android:id="@+id/toolBarDisplayStore"
             />
     </android.support.design.widget.AppBarLayout>
 
-    <WebView
+    <include layout="@layout/activity_display_store_core"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/appBarBackpack"
-        android:id="@+id/webView">
-
-    </WebView>
+        android:layout_below="@id/appBarDisplayStore"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 </RelativeLayout>

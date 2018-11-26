@@ -113,12 +113,20 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".GoToBreakfastActivity"
+        <activity
+            android:name=".GoToBreakfastActivity"
             android:parentActivityName=".EatActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".EatActivity" />
-        </activity>>
+        </activity>
+        >
+        <activity android:name=".DisplayStoreActivity"
+            android:parentActivityName=".GoToBreakfastActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GoToBreakfastActivity" />
+        </activity>
     </application>
 
 </manifest>

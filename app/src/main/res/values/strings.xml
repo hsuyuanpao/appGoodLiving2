@@ -32,5 +32,61 @@
 
     </string-array>
 
+    <string-array name="breakfast_store_url">
+        <item>https://www.instagram.com/explore/locations/342370429/</item>
+        <item>https://www.walkerland.com.tw/article/view/143830?page=full</item>
+        <item>https://zh-tw.facebook.com/FeiZaiXiangGuRouGeng/</item>
+        <item>https://zh-tw.facebook.com/pages/%E5%8C%97%E6%B8%AF%E7%89%9B%E8%82%89%E6%B9%AF/107076039371549</item>
+        <item>https://www.instagram.com/explore/locations/918203933/-/</item>
+        <item>https://www.facebook.com/pages/category/Local-Business/%E8%80%81%E7%AD%89%E6%B2%B9%E9%A3%AF%E9%BA%B5%E7%B7%9A%E7%B3%8A%E5%89%B5%E5%A7%8B%E6%96%BC%E6%B0%91%E5%9C%8B34%E5%B9%B4-417557015264536/</item>
+        <item>https://www.facebook.com/1001daily/videos/%E9%9B%B2%E6%9E%97-%E5%8C%97%E6%B8%AF-%E6%9C%9D%E5%A4%A9%E5%AE%AE-%E8%82%89%E7%B2%BD%E8%B2%A1/321320188451409/</item>
+        <item>https://i40man.tian.yam.com/posts/29265301</item>
+        <item>https://www.facebook.com/CHEN.JIA.JIAN.PAN.GUO/</item>
+        <item>https://taiwantour.info/north-port/</item>
+        <item>https://travel.yam.com/Article.aspx?sn=3089</item>
+
+    </string-array>
+
+    <string-array name="lunch_store_url">
+        <item>https://zh-tw.facebook.com/beigangmatsu/</item>
+        <item>https://zh-tw.facebook.com/Saintarthotel/posts/735296423343129</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E5%A5%B3%E5%85%92%E6%A9%8B/374047869690457</item>
+        <item>https://zh-tw.facebook.com/pages/%E5%8C%97%E6%B8%AF%E7%89%9B%E5%A2%9F/194413240581964</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E6%B0%B4%E9%81%93%E9%A0%AD%E6%96%87%E5%8C%96%E5%9C%92%E5%8D%80/850773458416349</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E5%85%AC%E9%A4%A8%E9%87%8C%E5%BD%A9%E7%B9%AA%E7%A4%BE%E5%8D%80/1753364164896927</item>
+        <item>https://zh-tw.facebook.com/beigang.craft/</item>
+        <item>https://zh-tw.facebook.com/TheWudeTemple/</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E8%A7%80%E5%85%89%E5%A4%A7%E6%A9%8B/565445066937418</item>
+        <item>https://zh-tw.facebook.com/peikang.yimin.temple/</item>
+
+    </string-array>
+
+    <string-array name="afternoontea_store_url">
+        <item>https://zh-tw.facebook.com/beigangmatsu/</item>
+        <item>https://zh-tw.facebook.com/Saintarthotel/posts/735296423343129</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E5%A5%B3%E5%85%92%E6%A9%8B/374047869690457</item>
+        <item>https://zh-tw.facebook.com/pages/%E5%8C%97%E6%B8%AF%E7%89%9B%E5%A2%9F/194413240581964</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E6%B0%B4%E9%81%93%E9%A0%AD%E6%96%87%E5%8C%96%E5%9C%92%E5%8D%80/850773458416349</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E5%85%AC%E9%A4%A8%E9%87%8C%E5%BD%A9%E7%B9%AA%E7%A4%BE%E5%8D%80/1753364164896927</item>
+        <item>https://zh-tw.facebook.com/beigang.craft/</item>
+        <item>https://zh-tw.facebook.com/TheWudeTemple/</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E8%A7%80%E5%85%89%E5%A4%A7%E6%A9%8B/565445066937418</item>
+        <item>https://zh-tw.facebook.com/peikang.yimin.temple/</item>
+
+    </string-array>
+
+    <string-array name="dinner_store_url">
+        <item>https://zh-tw.facebook.com/beigangmatsu/</item>
+        <item>https://zh-tw.facebook.com/Saintarthotel/posts/735296423343129</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E5%A5%B3%E5%85%92%E6%A9%8B/374047869690457</item>
+        <item>https://zh-tw.facebook.com/pages/%E5%8C%97%E6%B8%AF%E7%89%9B%E5%A2%9F/194413240581964</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E6%B0%B4%E9%81%93%E9%A0%AD%E6%96%87%E5%8C%96%E5%9C%92%E5%8D%80/850773458416349</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E5%85%AC%E9%A4%A8%E9%87%8C%E5%BD%A9%E7%B9%AA%E7%A4%BE%E5%8D%80/1753364164896927</item>
+        <item>https://zh-tw.facebook.com/beigang.craft/</item>
+        <item>https://zh-tw.facebook.com/TheWudeTemple/</item>
+        <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E8%A7%80%E5%85%89%E5%A4%A7%E6%A9%8B/565445066937418</item>
+        <item>https://zh-tw.facebook.com/peikang.yimin.temple/</item>
+
+    </string-array>
 
 </resources>
