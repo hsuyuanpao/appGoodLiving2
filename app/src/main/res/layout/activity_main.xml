@@ -10,39 +10,44 @@
     tools:context=".MainActivity">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="#e8f0d6">
 
-        <include
-            layout="@layout/toolbar_layout"
-            android:id="@+id/toolBar"
-            />
-
-    <android.support.v7.widget.CardView
-        android:layout_gravity="center_horizontal"
-        app:cardElevation="10dp"
-        app:cardBackgroundColor="@android:color/transparent"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        app:cardCornerRadius="5dp"
-        android:layout_height="wrap_content">
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/appbarTop">
+            <include
+                layout="@layout/toolbar_layout"
+                android:id="@+id/toolBar"
+                />
+        </android.support.design.widget.AppBarLayout>
 
         <ImageView
+            android:layout_below="@+id/appbarTop"
+            android:layout_above="@id/appbarButtom"
             android:id="@+id/imView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:adjustViewBounds="true"
             android:contentDescription="@null"
             />
 
-    </android.support.v7.widget.CardView>
-    </LinearLayout>
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/appbarButtom">
+            <include
+                layout="@layout/toolbar_layout"
+                android:id="@+id/toolbarButtom"
+                />
+        </android.support.design.widget.AppBarLayout>
+    </RelativeLayout>
 
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"
