@@ -97,8 +97,11 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.nav_traffic_information:
                         menuItem.setChecked(true);
-                        displayMessage("交通資訊報馬仔");
+                       // displayMessage("交通資訊報馬仔");
                         drawerLayout.closeDrawers();
+                        Intent intent5 = new Intent(MainActivity.this, InformationActivity.class);
+                        Log.d(TAG,"MapsActivity: is preparing to run...");
+                        startActivity(intent5);
                         return true;
                 }
                 return false;
@@ -137,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void GoToInformation(View view){
-        Intent intent9 = new Intent(MainActivity.this, AttrcationsNearByCVActivity.class);
+        Intent intent9 = new Intent(MainActivity.this, InformationActivity.class);
         startActivity(intent9);
     }
 

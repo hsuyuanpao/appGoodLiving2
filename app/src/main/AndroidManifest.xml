@@ -12,12 +12,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-
     <application
-        android:largeHeap="true"
         android:allowBackup="true"
         android:icon="@drawable/hodua2"
         android:label="@string/app_name2"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
@@ -123,12 +122,14 @@
                 android:value=".EatActivity" />
         </activity>
         >
-        <activity android:name=".DisplayStoreActivity"
+        <activity
+            android:name=".DisplayStoreActivity"
             android:parentActivityName=".GoToBreakfastActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".GoToBreakfastActivity" />
         </activity>
+        <activity android:name=".InformationActivity"></activity>
     </application>
 
 </manifest>
