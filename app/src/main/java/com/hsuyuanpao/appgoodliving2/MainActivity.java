@@ -121,4 +121,24 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
+    public void GoToAttractions(View view){
+        Intent intent6 = new Intent(MainActivity.this, AttrcationsNearByCVActivity.class);
+        startActivity(intent6);
+    }
+
+    public void GoToEat(View view){
+        Intent intent7 = new Intent(MainActivity.this, EatActivity.class);
+        startActivity(intent7);
+    }
+
+    public void GoToHodua(View view){
+        Intent intent8 = new Intent(MainActivity.this, GoToGoodLivingActivity.class);
+        startActivity(intent8);
+    }
+
+    public void GoToInformation(View view){
+        Intent intent9 = new Intent(MainActivity.this, AttrcationsNearByCVActivity.class);
+        startActivity(intent9);
+    }
+
 }

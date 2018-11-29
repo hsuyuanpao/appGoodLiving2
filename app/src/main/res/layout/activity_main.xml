@@ -43,7 +43,7 @@
             android:layout_alignParentBottom="true"
             android:id="@+id/appbarButtom">
             <include
-                layout="@layout/toolbar_layout"
+                layout="@layout/toolbar_layout_buttom"
                 android:id="@+id/toolbarButtom"
                 />
         </android.support.design.widget.AppBarLayout>
