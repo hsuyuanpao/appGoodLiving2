@@ -2,6 +2,7 @@ package com.hsuyuanpao.appgoodliving2;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -21,6 +22,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -83,16 +85,17 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     public void onComplete(@NonNull Task task) {
                         if (task.isSuccessful() && task.getResult() != null) {
                             //找到目前位置
-                            Toast.makeText(MapsActivity.this, "定位完成...", Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(MapsActivity.this, "定位完成...", Toast.LENGTH_SHORT).show();
                             Location mLocation = (Location) task.getResult();
 
                         //    Log.d(TAG, "getDeviceLocation: " + mLocation.getLatitude() +", "+mLocation.getLongitude());
                             Log.d(TAG, "getDeviceLocation: localization OK..."+mLocation.getLatitude()+" "+mLocation.getLongitude());
                             LatLng mLatLng = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
-
+                            mMap.setMyLocationEnabled(true);    //致能返回目前位址小圖示
                             mMap.addMarker(new MarkerOptions().position(mLatLng).title("目前位置"));
                            // mMap.moveCamera(CameraUpdateFactory.newLatLng(mLatLng));
-                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,12));
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,14));
+
                         }
                     }
                 });
@@ -172,5 +175,42 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         Log.d(TAG,"onMapReady: is preparing to run...");
         getDeviceLocation();
+
+        mMap.setOnMyLocationButtonClickListener(onMyLocationButtonClickListener);
+      //  mMap.setOnMyLocationClickListener(onMyLocationClickListener);
+
+
+        //mMap.getUiSettings().setZoomControlsEnabled(true);
+        //mMap.setMinZoomPreference(11);
     }
+
+    private GoogleMap.OnMyLocationButtonClickListener onMyLocationButtonClickListener =
+            new GoogleMap.OnMyLocationButtonClickListener() {
+                @Override
+                public boolean onMyLocationButtonClick() {
+                    //mMap.setMinZoomPreference(15);
+                    getDeviceLocation();
+                   // Toast.makeText(MapsActivity.this, "按返回鈕...", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            };
+
+/*    private GoogleMap.OnMyLocationClickListener onMyLocationClickListener =
+            new GoogleMap.OnMyLocationClickListener() {
+                @Override
+                public void onMyLocationClick(@NonNull Location location) {
+
+                    mMap.setMinZoomPreference(12);
+
+                    CircleOptions circleOptions = new CircleOptions();
+                    circleOptions.center(new LatLng(location.getLatitude(),
+                            location.getLongitude()));
+
+                    circleOptions.radius(200);
+                    circleOptions.fillColor(Color.RED);
+                    circleOptions.strokeWidth(6);
+
+                    mMap.addCircle(circleOptions);
+                }
+            };*/
 }

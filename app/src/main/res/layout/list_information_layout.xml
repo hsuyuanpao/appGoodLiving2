@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:textSize="20sp"
-    android:textColor="@color/colorPrimaryDark"
-    android:background="#f0f8ff"
+
+    android:textColor="#ffffff"
+    android:background="#062c01"
     android:gravity="center_vertical"/>

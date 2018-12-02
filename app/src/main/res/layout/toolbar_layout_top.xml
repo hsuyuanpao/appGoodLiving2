@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:src="@drawable/ic_back"
+            android:id="@+id/imviewTop1"
             android:onClick="LastPage"/>
 
         <TextView
@@ -48,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:src="@drawable/ic_home"
+            android:id="@+id/imviewTop2"
             android:onClick="HomePage"/>
 
 

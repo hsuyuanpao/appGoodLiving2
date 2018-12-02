@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.net.Uri;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.Objects;
@@ -60,6 +61,43 @@ public class MainActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.imView1);
         imageView.setBackgroundResource(R.drawable.hodua1);
+
+        LinearLayout linearLayout1 = findViewById(R.id.lnmain1);
+        LinearLayout linearLayout2 = findViewById(R.id.lnmain2);
+        LinearLayout linearLayout3 = findViewById(R.id.lnmain3);
+        LinearLayout linearLayout4 = findViewById(R.id.lnmain4);
+
+        linearLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {    //景點介紹
+                Intent intent6 = new Intent(MainActivity.this, AttrcationsNearByCVActivity.class);
+                startActivity(intent6);
+            }
+        });
+
+        linearLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {    //吃喝推薦
+                Intent intent7 = new Intent(MainActivity.this, EatActivity.class);
+                startActivity(intent7);
+            }
+        });
+
+        linearLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {    //前往好住
+                Intent intent8 = new Intent(MainActivity.this, GoToGoodLivingActivity.class);
+                startActivity(intent8);
+            }
+        });
+
+        linearLayout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {    //報馬仔
+                Intent intent9 = new Intent(MainActivity.this, InformationActivity.class);
+                startActivity(intent9);
+            }
+        });
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -120,28 +158,30 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
     }
 
-    private void displayMessage(String message){
+    /*private void displayMessage(String message){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     public void GoToAttractions(View view){
-        Intent intent6 = new Intent(MainActivity.this, AttrcationsNearByCVActivity.class);
+        Intent intent6 = new Intent(this, AttrcationsNearByCVActivity.class);
         startActivity(intent6);
+
     }
 
     public void GoToEat(View view){
-        Intent intent7 = new Intent(MainActivity.this, EatActivity.class);
+        Intent intent7 = new Intent(this, EatActivity.class);
         startActivity(intent7);
+
     }
 
     public void GoToHodua(View view){
-        Intent intent8 = new Intent(MainActivity.this, GoToGoodLivingActivity.class);
+        Intent intent8 = new Intent(this, GoToGoodLivingActivity.class);
         startActivity(intent8);
     }
 
     public void GoToInformation(View view){
-        Intent intent9 = new Intent(MainActivity.this, InformationActivity.class);
+        Intent intent9 = new Intent(this, InformationActivity.class);
         startActivity(intent9);
-    }
+    }*/
 
 }

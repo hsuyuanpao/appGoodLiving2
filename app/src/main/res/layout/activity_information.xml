@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/listviewInfo"
         android:layout_below="@+id/appbarTop"
+
         ></ListView>
 
 
