@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hsuyuanpao.appgoodliving2">
 
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.camera2" />
@@ -20,6 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,6 +74,8 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+
+        <uses-library android:name="com.google.android.maps" />
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -129,7 +133,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".GoToBreakfastActivity" />
         </activity>
-        <activity android:name=".InformationActivity"></activity>
+        <activity android:name=".InformationActivity" />
+        <activity
+            android:name=".DisplayInformationActivity"
+            android:label="@string/title_activity_display_information"></activity>
     </application>
 
 </manifest>

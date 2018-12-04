@@ -88,5 +88,50 @@
         <item>https://zh-tw.facebook.com/peikang.yimin.temple/</item>
 
     </string-array>
+    <string name="title_activity_display_information">Map</string>
+
+    <string name="map_key_newest">AIzaSyANyVTSzPoNKh5xrjjbKtR4u88fMTkEiBg</string>
+    
+    <string-array name="list_lat">
+        <item>23.56782</item>
+        <item>23.581049</item>
+        <item>23.576726</item>
+        <item>23.578661</item>
+        <item>23.573801</item>
+        <item>23.577479</item>
+        <item>23.565725</item>
+        <item>23.589864</item>
+        <item>23.575291</item>
+        <item>23.564532</item>
+        <item>23.566120</item>
+        <item>23.567222</item>
+        <item>23.570039</item>
+        <item>23.570021</item>
+        <item>23.570503</item>
+        <item>23.565660</item>
+        <item>23.584448</item>
+        <item>23.559690</item>
+    </string-array>
+
+    <string-array name="list_lng">
+        <item>120.304643</item>
+        <item>120.299154</item>
+        <item>120.302984</item>
+        <item>120.301254</item>
+        <item>120.295431</item>
+        <item>120.304441</item>
+        <item>120.299206</item>
+        <item>120.307384</item>
+        <item>120.300598</item>
+        <item>120.305663</item>
+        <item>120.304465</item>
+        <item>120.304608</item>
+        <item>120.300749</item>
+        <item>120.300626</item>
+        <item>120.302131</item>
+        <item>120.298692</item>
+        <item>120.300637</item>
+        <item>120.301683</item>
+    </string-array>
 
 </resources>

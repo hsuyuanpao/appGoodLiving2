@@ -92,7 +92,7 @@ public class GoToBreakfastActivity extends AppCompatActivity {
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView adapterView, View view, int i, long l) {    // i 早餐店編號; 1 代表早餐
                 Log.d(TAG, "onItemClick: name: " + names.get(i));
                // Toast.makeText(GoToBreakfastActivity.this, "You clicked on: " + names.get(i), Toast.LENGTH_SHORT).show();
 
