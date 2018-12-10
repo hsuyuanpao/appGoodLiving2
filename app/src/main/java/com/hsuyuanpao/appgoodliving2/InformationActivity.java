@@ -82,26 +82,34 @@ public class InformationActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {// i 早餐店編號; 1 代表早餐
                 //Log.d(TAG, "onItemClick: name: " + names.get(i));
-                Toast.makeText(InformationActivity.this, "You clicked on: " + name_only.get(i), Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(InformationActivity.this, DisplayInformationActivity.class);
-                intent.putExtra("name", name_only.get(i).toString());
-                intent.putExtra("no", i); //傳編號
-                startActivity(intent);
+                //Toast.makeText(InformationActivity.this, "You clicked on: " + name_only.get(i), Toast.LENGTH_SHORT).show();
+                if (i == 18 || i == 19) {
+                    Intent intent1 = new Intent(InformationActivity.this, DisplayInformation2Activity.class);
+                    //Toast.makeText(InformationActivity.this, "You clicked on: " + name_only.get(i), Toast.LENGTH_LONG).show();
+                    //Log.d(TAG, "onItemClick: name: " + names.get(i) + "no:" + i);
+                    intent1.putExtra("name", name_only.get(i).toString());
+                    intent1.putExtra("no", i); //傳編號
+                    startActivity(intent1);
+                }
+                else {
+                    Intent intent2 = new Intent(InformationActivity.this, DisplayInformationActivity.class);
+                    //Toast.makeText(InformationActivity.this, "You clicked on: " + name_only.get(i), Toast.LENGTH_LONG).show();
+                    //Log.d(TAG, "onItemClick: name: " + names.get(i) + "no:" + i);
+                    intent2.putExtra("name", name_only.get(i).toString());
+                    intent2.putExtra("no", i); //傳編號
+                    startActivity(intent2);
+                }
             }
         });
     }
 
-
-
-
     public void LastPage(View view){
-        Intent intent = new Intent(this, InformationActivity.class);
-        startActivity(intent);
+        Intent intent3 = new Intent(this, MainActivity.class);
+        startActivity(intent3);
     }
 
     public void HomePage(View view){
-        Intent intent1 = new Intent(this, MainActivity.class);
-        startActivity(intent1);
+        Intent intent4 = new Intent(this, MainActivity.class);
+        startActivity(intent4);
     }
 }

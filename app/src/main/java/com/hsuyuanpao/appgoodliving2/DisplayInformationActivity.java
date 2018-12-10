@@ -2,19 +2,27 @@ package com.hsuyuanpao.appgoodliving2;
 
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
+import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -24,6 +32,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.hsuyuanpao.appgoodliving2.directionhelpers.FetchURL;
 import com.hsuyuanpao.appgoodliving2.directionhelpers.TaskLoadedCallback;
 
@@ -31,14 +41,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.hsuyuanpao.appgoodliving2.MainActivity.i;
+
 public class DisplayInformationActivity extends FragmentActivity implements OnMapReadyCallback, TaskLoadedCallback {
     private static final String TAG = "DisplayInfoActivity";
     private GoogleMap mMap;
-    private MarkerOptions place1, place2;
+    public MarkerOptions place1, place2;
     //Button getDirection;
     private Polyline currentPolyline;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1001;
     private static boolean rLocationGranted = false;
+    private FusedLocationProviderClient mFusedLocationProviderClient;
     private List<String> listlat;
     private List<String> listlng;
 
@@ -49,49 +62,117 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
 
         Toolbar toolbar = findViewById(R.id.toolbarTop);
         TextView textView = findViewById(R.id.toolbarTitle);
+        ImageView imageView1 = findViewById(R.id.imviewTop1);
+        ImageView imageView2 = findViewById(R.id.imviewTop2);
 
         String name = getIntent().getStringExtra("name");
-        int no = getIntent().getIntExtra("no",0);   // get location no.
-       //Toast.makeText(this, "Information of no: " + no, Toast.LENGTH_SHORT).show();
+        int no = getIntent().getIntExtra("no", 0);   // get location no.
+        //Toast.makeText(this, "Information of no: " + no, Toast.LENGTH_SHORT).show();
         textView.setText(name);
-        if(chkPlayService()) {
+        if (chkPlayService()) {
             initMap();
             if (rLocationGranted) {
                 // Obtain the SupportMapFragment and get notified when the map is ready to be used.
                 SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                        .findFragmentById(R.id.map);
+                            .findFragmentById(R.id.map);
                 mapFragment.getMapAsync(this);
+
             }
         }
-
-        /*/ Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);*/
-
-        //mMap.getUiSettings().setCompassEnabled(true); // 顯示指南針
-        //mMap.getUiSettings().setZoomControlsEnabled(true);// 顯示縮放圖示
 
         listlat = Arrays.asList(getResources().getStringArray(R.array.list_lat));
         listlng = Arrays.asList(getResources().getStringArray(R.array.list_lng));
         String la = listlat.get(no);
-        Float lat= Float.parseFloat(la);
+        Float lat = Float.parseFloat(la);
         String lg = listlng.get(no);
         Float lng = Float.parseFloat(lg);
-        place1 = new MarkerOptions().position(new LatLng(23.569478, 120.304146)).title("好住民宿");
-        place2 = new MarkerOptions().position(new LatLng(lat, lng)).title(name);
+        //place1 = new MarkerOptions().position(new LatLng(23.569478, 120.304146)).title("好住民宿 ");
+        place2 = new MarkerOptions().position(new LatLng(lat, lng)).title(name);    //目的地名稱
+        Log.d(TAG, "onCreate: place2 is ok...");
 
-       /* CameraPosition cameraPosition = new CameraPosition.Builder()
+        imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(DisplayInformationActivity.this, InformationActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(DisplayInformationActivity.this, MainActivity.class);
+                startActivity(intent2);
+            }
+        });
+
+            /*/ Obtain the SupportMapFragment and get notified when the map is ready to be used.
+            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);*/
+            //mMap.setMyLocationEnabled(true);
+            //mMap.getUiSettings().setCompassEnabled(true); // 顯示指南針
+            // mMap.getUiSettings().setZoomControlsEnabled(true);// 顯示縮放圖示
+
+            /* CameraPosition cameraPosition = new CameraPosition.Builder()
                 .target(new  LatLng(23.569478, 120.304146)) // 地圖的中心點
                 .zoom(14) // 放大倍率
                 .bearing(0) // 指南針旋轉 0 度
                 .tilt(0) // 俯視的角度
                 .build(); // 建立 CameraPosition 物件
-        mMap.animateCamera(CameraUpdateFactory
+            mMap.animateCamera(CameraUpdateFactory
                 .newCameraPosition(cameraPosition));*/
 
+        }
+
+    private boolean chkPlayService(){
+        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(DisplayInformationActivity.this);
+        if(available == ConnectionResult.SUCCESS){
+            Log.d(TAG, "chkPlayService: is successful...");
+            return true;
+        }
+        else{
+            //Toast.makeText(this, "version does not match...", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "chkPlayService: is failed...");
+            return false;
+        }
     }
 
+    private void initMap() {
+        String[] permissions = {Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION};
+        if(ContextCompat.checkSelfPermission(this.getApplicationContext(), permissions[0]) == PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(this.getApplicationContext(), permissions[1]) == PackageManager.PERMISSION_GRANTED) {
+            //可以取得 fine location
+            Log.d(TAG, "initMap: is granted...");
+            rLocationGranted = true;
+        }
+        else{
+            ActivityCompat.requestPermissions(this, permissions, LOCATION_PERMISSION_REQUEST_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        //super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        rLocationGranted = false;
+        switch (requestCode){
+            case LOCATION_PERMISSION_REQUEST_CODE:{
+                if(grantResults.length > 0){
+                    for(int i = 0; i < grantResults.length; i++){
+                        if(grantResults[i] != PackageManager.PERMISSION_GRANTED){
+                            rLocationGranted = false;
+                            return;
+                        }
+                    }
+                    rLocationGranted = true;
+                    // Map initialization
+                }
+            }
+        }
+    }
+
+   // }
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -106,19 +187,20 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         Log.d("mylog", "Added Markers");
-        mMap.addMarker(place1);
-        mMap.addMarker(place2);
 
-        LatLng mLatLng = new  LatLng(23.569478, 120.304146);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(mLatLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(14));
+        getDeviceLocation();    //下列的工作都寫在 getDeviceLocation 中，不能寫在下面，可能是參數傳遞的問題!
+        //place2 = new MarkerOptions().position(new LatLng(23.489474, 120.466244)).title("xxxxx ");
+        //mMap.addMarker(place1);
+        //mMap.addMarker(place2);
+        //Log.d(TAG, "onMapReady: get place1 latlng: "+ place1.getPosition());
+        //LatLng mLatLng = new  LatLng(23.569478, 120.304146);
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(place1.getPosition()));
+        //mMap.animateCamera(CameraUpdateFactory.zoomTo(13));
 
 
-        new FetchURL(DisplayInformationActivity.this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
+        //new FetchURL(DisplayInformationActivity.this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
 
     }
-
-
 
     private String getUrl(LatLng origin, LatLng dest, String directionMode) {
         // Origin of route
@@ -136,40 +218,63 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
         return url;
     }
 
-
     @Override
     public void onTaskDone(Object... values) {
         if (currentPolyline != null)
             currentPolyline.remove();
-        Toast.makeText(this, "onTaskDone is performed... ", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "onTaskDone is performed... ", Toast.LENGTH_SHORT).show();
         currentPolyline = mMap.addPolyline((PolylineOptions) values[0]);
     }
 
+    private void getDeviceLocation(){
+        mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        try{
+            if(rLocationGranted){
+                final Task location = mFusedLocationProviderClient.getLastLocation();
+                location.addOnCompleteListener(new OnCompleteListener() {
+                    @Override
+                    public void onComplete(@NonNull Task task) {
+                        if (task.isSuccessful() && task.getResult() != null) {
+                            //找到目前位置
+                            // Toast.makeText(MapsActivity.this, "定位完成...", Toast.LENGTH_SHORT).show();
+                            Location mLocation = (Location) task.getResult();
 
-    private void initMap() {
-        String[] permissions = {Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.ACCESS_FINE_LOCATION};
-        if(ContextCompat.checkSelfPermission(this.getApplicationContext(), permissions[0]) == PackageManager.PERMISSION_GRANTED ||
-                ContextCompat.checkSelfPermission(this.getApplicationContext(), permissions[1]) == PackageManager.PERMISSION_GRANTED) {
-            //可以取得 fine location
-            rLocationGranted = true;
+                            //    Log.d(TAG, "getDeviceLocation: " + mLocation.getLatitude() +", "+mLocation.getLongitude());
+                            Log.d(TAG, "getDeviceLocation: localization OK..."+mLocation.getLatitude()+" "+mLocation.getLongitude());
+                            LatLng mLatLng = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
+                            mMap.setMyLocationEnabled(true);    //致能返回目前位址小圖示
+                            place1 = new MarkerOptions().position(mLatLng).title("目前位置 ");
+                            Log.d(TAG, "getDeviceLocation: get place1 latlng: "+ place1.getPosition());
+                            mMap.addMarker(place1);
+
+                            mMap.moveCamera(CameraUpdateFactory.newLatLng(mLatLng));
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,13));
+
+                            //place2 = new MarkerOptions().position(new LatLng(23.463234, 120.286120)).title("xxxxx");
+                            mMap.addMarker(place2);
+
+                            new FetchURL(DisplayInformationActivity.this)
+                                    .execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
+
+                        }
+                    }
+                });
+            }
         }
-        else{
-            ActivityCompat.requestPermissions(this, permissions, LOCATION_PERMISSION_REQUEST_CODE);
+        catch (SecurityException ex){
+            Log.e(TAG, "getDeviceLocation: " + ex.getMessage());
         }
     }
 
-    private boolean chkPlayService(){
-        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(DisplayInformationActivity.this);
-        if(available == ConnectionResult.SUCCESS){
-            Log.d(TAG, "chkPlayService: is successful...");
-            return true;
-        }
-        else{
-            Toast.makeText(this, "version does not match...", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+/*    public void LastPage(View view){
+        Intent intent = new Intent(this, InformationActivity.class);
+        startActivity(intent);
     }
+
+    public void HomePage(View view){
+        Intent intent1 = new Intent(this, MainActivity.class);
+        startActivity(intent1);
+    }*/
 
 }
 

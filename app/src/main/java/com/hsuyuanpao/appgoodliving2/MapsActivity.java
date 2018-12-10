@@ -62,6 +62,18 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    private boolean chkPlayService(){
+        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(MapsActivity.this);
+        if(available == ConnectionResult.SUCCESS){
+            Log.i(TAG, "chkPlayService: is successful...");
+            return true;
+        }
+        else{
+            Toast.makeText(this, "version does not match...", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
     private void initMap() {
         String[] permissions = {Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.ACCESS_FINE_LOCATION};
@@ -145,17 +157,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
-    private boolean chkPlayService(){
-        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(MapsActivity.this);
-        if(available == ConnectionResult.SUCCESS){
-            Log.i(TAG, "chkPlayService: is successful...");
-            return true;
-        }
-        else{
-            Toast.makeText(this, "version does not match...", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.

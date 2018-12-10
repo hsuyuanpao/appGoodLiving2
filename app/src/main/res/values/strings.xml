@@ -91,7 +91,7 @@
     <string name="title_activity_display_information">Map</string>
 
     <string name="map_key_newest">AIzaSyANyVTSzPoNKh5xrjjbKtR4u88fMTkEiBg</string>
-    
+
     <string-array name="list_lat">
         <item>23.56782</item>
         <item>23.581049</item>
