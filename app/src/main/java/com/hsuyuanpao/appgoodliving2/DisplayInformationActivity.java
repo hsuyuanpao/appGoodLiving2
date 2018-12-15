@@ -2,10 +2,15 @@ package com.hsuyuanpao.appgoodliving2;
 
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -69,17 +74,32 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
         int no = getIntent().getIntExtra("no", 0);   // get location no.
         //Toast.makeText(this, "Information of no: " + no, Toast.LENGTH_SHORT).show();
         textView.setText(name);
-        if (chkPlayService()) {
-            initMap();
-            if (rLocationGranted) {
-                // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-                SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+        if(haveInternet()) {
+            if (chkPlayService()) {
+                initMap();
+                if (rLocationGranted) {
+                    // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+                    SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                             .findFragmentById(R.id.map);
-                mapFragment.getMapAsync(this);
+                    mapFragment.getMapAsync(this);
 
+                }
             }
         }
-
+        else{
+            /*Toast.makeText(DisplayInformationActivity.this
+                    , "請開網路...", Toast.LENGTH_LONG).show();*/
+            new AlertDialog.Builder(DisplayInformationActivity.this)
+                    .setTitle("提醒")
+                    .setMessage("手機網路未開，請至手機之設定功能選單，開啟網路!")
+                    .setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    })
+                    .show();
+        }
         listlat = Arrays.asList(getResources().getStringArray(R.array.list_lat));
         listlng = Arrays.asList(getResources().getStringArray(R.array.list_lng));
         String la = listlat.get(no);
@@ -125,6 +145,30 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
 
         }
 
+    private boolean haveInternet()
+    {
+        boolean result = false;
+        ConnectivityManager connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info=connManager.getActiveNetworkInfo();
+        if (info == null || !info.isConnected())
+        {
+            result = false;
+        }
+        else
+        {
+            if (!info.isAvailable())
+            {
+                result =false;
+            }
+            else
+            {
+                result = true;
+            }
+        }
+
+        return result;
+    }
+
     private boolean chkPlayService(){
         int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(DisplayInformationActivity.this);
         if(available == ConnectionResult.SUCCESS){
@@ -162,11 +206,12 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
                     for(int i = 0; i < grantResults.length; i++){
                         if(grantResults[i] != PackageManager.PERMISSION_GRANTED){
                             rLocationGranted = false;
+                            Log.d(TAG, "onRequestPermissionsResult: is not granted...");
                             return;
                         }
                     }
                     rLocationGranted = true;
-                    // Map initialization
+                    Log.d(TAG, "onRequestPermissionsResult: is granted...");
                 }
             }
         }
