@@ -84,7 +84,9 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
                     mapFragment.getMapAsync(this);
 
                 }
+
             }
+
         }
         else{
             /*Toast.makeText(DisplayInformationActivity.this
@@ -178,6 +180,7 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
         else{
             //Toast.makeText(this, "version does not match...", Toast.LENGTH_SHORT).show();
             Log.d(TAG, "chkPlayService: is failed...");
+
             return false;
         }
     }
@@ -207,6 +210,7 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
                         if(grantResults[i] != PackageManager.PERMISSION_GRANTED){
                             rLocationGranted = false;
                             Log.d(TAG, "onRequestPermissionsResult: is not granted...");
+
                             return;
                         }
                     }
@@ -244,8 +248,19 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
 
 
         //new FetchURL(DisplayInformationActivity.this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
-
+        mMap.setOnMyLocationButtonClickListener(onMyLocationButtonClickListener);
     }
+
+    private GoogleMap.OnMyLocationButtonClickListener onMyLocationButtonClickListener =
+            new GoogleMap.OnMyLocationButtonClickListener() {
+                @Override
+                public boolean onMyLocationButtonClick() {
+                    //mMap.setMinZoomPreference(15);
+                    getDeviceLocation();
+                    // Toast.makeText(MapsActivity.this, "按返回鈕...", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            };
 
     private String getUrl(LatLng origin, LatLng dest, String directionMode) {
         // Origin of route
@@ -301,6 +316,19 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
                             new FetchURL(DisplayInformationActivity.this)
                                     .execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
 
+                        }
+                        else{
+                            new AlertDialog.Builder(DisplayInformationActivity.this)
+                                    .setTitle("提醒")
+                                    .setMessage("手機定位未開，請至手機之設定功能選單，開啟定位功能!")
+                                    /*.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                           finish();
+                                        }
+                                    })*/
+                                    .setNegativeButton("確定",null)
+                                    .show();
                         }
                     }
                 });
