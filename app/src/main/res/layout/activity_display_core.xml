@@ -57,7 +57,7 @@
             android:textSize="16sp"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
-
+            android:layout_marginBottom="5dp"
             android:scrollbars="vertical"/>
 
         <android.support.v7.widget.CardView
@@ -65,8 +65,8 @@
             app:cardElevation="10dp"
             app:cardBackgroundColor="@android:color/transparent"
             android:layout_width="400dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             app:cardCornerRadius="5dp"
@@ -74,13 +74,20 @@
             android:layout_below="@+id/textDesc"
             android:id="@+id/cardView2">
 
-            <ImageView
+            <com.github.chrisbanes.photoview.PhotoView
                 android:id="@+id/imageDisplay2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="400dp"
+                android:layout_height="300dp"
 
                 android:contentDescription="@null"
                 />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+
+                android:background="#2e47e8"
+                android:src="@drawable/ic_zoom_in"/>
 
         </android.support.v7.widget.CardView>
         <LinearLayout
@@ -100,7 +107,6 @@
                 android:id="@+id/maplogo"
                 android:src="@drawable/google_map_logo2"
                 android:onClick="GoToMapsActivity"/>
-
 
             <ImageView
                 android:layout_width="0dp"

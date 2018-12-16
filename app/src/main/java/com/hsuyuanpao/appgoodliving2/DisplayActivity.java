@@ -41,17 +41,18 @@ public class DisplayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display);
 
         Toolbar toolbar = findViewById(R.id.toolBar3);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
+
+        TextView tvTitle = findViewById(R.id.toolbarTitle);
+        ImageView imTop1 = findViewById(R.id.imviewTop1);
+        ImageView imTop2 = findViewById(R.id.imviewTop2);
+
         String title = getIntent().getStringExtra("image_title");
         if(title != null){//判斷是返回，還是新點選的景點。如果是返回則title會是空的!
             r_title = title;
             i = getIntent().getIntExtra("image",0);
         }
         //Toast.makeText(this, "title = "+r_title, Toast.LENGTH_SHORT).show();;
-        actionBar.setTitle(r_title);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_back);
+        tvTitle.setText(r_title);   // set toolbar Title
 
         imageView = findViewById(R.id.imageDisplay);
         imageView2 = findViewById(R.id.imageDisplay2);
@@ -74,11 +75,27 @@ public class DisplayActivity extends AppCompatActivity {
         //i = getIntent().getIntExtra("image",0);
 
         imageView.setBackgroundResource(images[i]);
-        imageView2.setBackgroundResource(imMap[i]);
+        imageView2.setImageResource(imMap[i]);
         igurl = listIG.get(i);  //取得ig網址
         fburl = listFB.get(i);  //取得fb網址
         Log.d(TAG,"onCreate : get igurl..."+ igurl);
-        //Toast.makeText(this, "image no. = "+ i, Toast.LENGTH_SHORT).show();;
+        //Toast.makeText(this, "image no. = "+ i, Toast.LENGTH_SHORT).show();
+
+        imTop1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(DisplayActivity.this, AttrcationsNearByCVActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        imTop2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(DisplayActivity.this, MainActivity.class);
+                startActivity(intent2);
+            }
+        });
 
     }
 

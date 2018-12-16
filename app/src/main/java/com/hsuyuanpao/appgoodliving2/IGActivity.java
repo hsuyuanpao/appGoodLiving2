@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.webkit.GeolocationPermissions;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
@@ -18,6 +19,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.support.v7.widget.Toolbar;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class IGActivity extends AppCompatActivity {
     private static final String TAG = "IGActivity";
@@ -27,12 +30,11 @@ public class IGActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ig);
 
         Toolbar toolbar = findViewById(R.id.toolBar5);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_back);
-        String title = getIntent().getStringExtra("title");
-        actionBar.setTitle(title);
+
+        TextView tvTitle = findViewById(R.id.toolbarTitle);
+        ImageView imTop1 = findViewById(R.id.imviewTop1);
+        ImageView imTop2 = findViewById(R.id.imviewTop2);
+        tvTitle.setText("Instagram");
 
         WebView mWebView = findViewById(R.id.webView);
 
@@ -75,6 +77,22 @@ public class IGActivity extends AppCompatActivity {
 
 
         mWebView.loadUrl(url);
+
+        imTop1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(IGActivity.this, DisplayActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        imTop2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(IGActivity.this, MainActivity.class);
+                startActivity(intent2);
+            }
+        });
 
     }
 

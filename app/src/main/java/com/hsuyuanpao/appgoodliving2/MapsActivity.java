@@ -1,6 +1,7 @@
 package com.hsuyuanpao.appgoodliving2;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -12,6 +13,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 import com.google.android.gms.common.ConnectionResult;
@@ -43,12 +47,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_maps);
 
         Toolbar toolbar = findViewById(R.id.toolBar4);
-        setSupportActionBar(toolbar);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_back);
-        actionBar.setTitle("Google Map");
+        TextView tvTitle = findViewById(R.id.toolbarTitle);
+        ImageView imTop1 = findViewById(R.id.imviewTop1);
+        ImageView imTop2 = findViewById(R.id.imviewTop2);
+        tvTitle.setText("Google Map");
 
         Log.d(TAG,"onCreate: is preparing to run...");
         if(chkPlayService()){
@@ -60,6 +63,24 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 mapFragment.getMapAsync(this);
             }
         }
+
+        imTop1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MapsActivity.this, DisplayActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        imTop2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(MapsActivity.this, MainActivity.class);
+                startActivity(intent2);
+            }
+        });
+
+
     }
 
     private boolean chkPlayService(){
@@ -104,6 +125,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                             Log.d(TAG, "getDeviceLocation: localization OK..."+mLocation.getLatitude()+" "+mLocation.getLongitude());
                             LatLng mLatLng = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
                             mMap.setMyLocationEnabled(true);    //致能返回目前位址小圖示
+                            //mMap.getUiSettings().setMyLocationButtonEnabled(true);
+                            mMap.getUiSettings().setCompassEnabled(true); // 顯示指南針
+                            mMap.getUiSettings().setZoomControlsEnabled(true);// 顯示縮放圖示
                             mMap.addMarker(new MarkerOptions().position(mLatLng).title("目前位置"));
                            // mMap.moveCamera(CameraUpdateFactory.newLatLng(mLatLng));
                             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,14));

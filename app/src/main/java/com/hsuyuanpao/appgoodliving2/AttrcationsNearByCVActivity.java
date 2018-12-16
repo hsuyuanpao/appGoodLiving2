@@ -25,7 +25,7 @@ public class AttrcationsNearByCVActivity extends AppCompatActivity{
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("週邊景點介紹");
+        actionBar.setTitle("          週邊景點介紹");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_back);
 

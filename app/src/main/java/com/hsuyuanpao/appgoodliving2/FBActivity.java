@@ -1,9 +1,11 @@
 package com.hsuyuanpao.appgoodliving2;
 
+import android.content.Intent;
 import android.net.http.SslError;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.GeolocationPermissions;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
@@ -11,6 +13,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.support.v7.widget.Toolbar;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class FBActivity extends AppCompatActivity {
 
@@ -20,12 +24,11 @@ public class FBActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fb);
 
         Toolbar toolbar = findViewById(R.id.toolBar6);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_back);
-        String title = getIntent().getStringExtra("title");
-        actionBar.setTitle(title);
+
+        TextView tvTitle = findViewById(R.id.toolbarTitle);
+        ImageView imTop1 = findViewById(R.id.imviewTop1);
+        ImageView imTop2 = findViewById(R.id.imviewTop2);
+        tvTitle.setText("Facebook");
 
         WebView mWebView = findViewById(R.id.webView);
         WebSettings webSettings = mWebView.getSettings();
@@ -62,5 +65,21 @@ public class FBActivity extends AppCompatActivity {
         });
         String url = getIntent().getStringExtra("urlString");
         mWebView.loadUrl(url);
+
+        imTop1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(FBActivity.this, DisplayActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        imTop2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(FBActivity.this, MainActivity.class);
+                startActivity(intent2);
+            }
+        });
     }
 }

@@ -303,6 +303,9 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
                             Log.d(TAG, "getDeviceLocation: localization OK..."+mLocation.getLatitude()+" "+mLocation.getLongitude());
                             LatLng mLatLng = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
                             mMap.setMyLocationEnabled(true);    //致能返回目前位址小圖示
+                            mMap.getUiSettings().setMyLocationButtonEnabled(true);
+                            mMap.getUiSettings().setCompassEnabled(true); // 顯示指南針
+                            mMap.getUiSettings().setZoomControlsEnabled(true);// 顯示縮放圖示
                             place1 = new MarkerOptions().position(mLatLng).title("目前位置 ");
                             Log.d(TAG, "getDeviceLocation: get place1 latlng: "+ place1.getPosition());
                             mMap.addMarker(place1);
