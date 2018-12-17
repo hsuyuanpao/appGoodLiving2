@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/appBarBreakfast">
         <include
-            layout="@layout/toolbar_layout"
+            layout="@layout/toolbar_layout_top"
             android:id="@+id/toolBarBreakfast"
             />
     </android.support.design.widget.AppBarLayout>

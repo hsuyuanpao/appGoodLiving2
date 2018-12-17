@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.GeolocationPermissions;
@@ -14,6 +15,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Arrays;
@@ -22,37 +24,25 @@ import java.util.List;
 import static android.media.CamcorderProfile.get;
 
 public class DisplayStoreActivity extends AppCompatActivity {
-
+    private static final String TAG = "DispStoreActivity";
     private List<String> list;
+    private static ImageView imageView1, imageView2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_store);
 
         Toolbar toolbar = findViewById(R.id.toolBarDisplayStore);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
+
+        TextView textView = findViewById(R.id.toolbarTitle);
+        imageView1 = findViewById(R.id.imviewTop1);
+        imageView2 = findViewById(R.id.imviewTop2);
+
         String name = getIntent().getStringExtra("name");
         String address = getIntent().getStringExtra("address");
         String phone = getIntent().getStringExtra("phone");
-        //Toast.makeText(this, "title = "+r_title, Toast.LENGTH_SHORT).show();;
-        actionBar.setTitle("        " + name);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_back); //back icon on toolbar
-       // actionBar.setLogo(R.drawable.ic_home);  //home icon on toolbar
-      /*  actionBar.setHomeButtonEnabled(true);
-        toolbar.setNavigationIcon(R.drawable.ic_home);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Intent intent = new Intent(DisplayStoreActivity.this, MainActivity.class);
 
-                //startActivity(intent);
-                onBackPressed();
-                return;
-            }
-        });*/
-
+        textView.setText(name);
 
         TextView tv1 = findViewById(R.id.tv1);
         TextView tv2 = findViewById(R.id.tv2);
@@ -94,45 +84,45 @@ public class DisplayStoreActivity extends AppCompatActivity {
                 list = Arrays.asList(getResources().getStringArray(R.array.breakfast_store_url));
                 String url = list.get(getIntent().getIntExtra("store_no", 0));
                 mWebView.loadUrl(url);
+                lastpage_or_home();
                 return;
             case 2: //lunch
                 list = Arrays.asList(getResources().getStringArray(R.array.lunch_store_url));
                 url = list.get(getIntent().getIntExtra("store_no", 0));
                 mWebView.loadUrl(url);
+                lastpage_or_home();
                 return;
             case 3: //afternoon tea
                 list = Arrays.asList(getResources().getStringArray(R.array.afternoontea_store_url));
                 url = list.get(getIntent().getIntExtra("store_no", 0));
                 mWebView.loadUrl(url);
+                lastpage_or_home();
                 return;
             case 4: //dinner
                 list = Arrays.asList(getResources().getStringArray(R.array.dinner_store_url));
                 url = list.get(getIntent().getIntExtra("store_no", 0));
                 mWebView.loadUrl(url);
+                lastpage_or_home();
                 return;
         }
     }
 
-        /**
-         * Let's the user tap the activity icon to go 'home'.
-         * Requires setHomeButtonEnabled() in onCreate().
-         */
-    /*    @Override
-        public boolean onOptionsItemSelected(MenuItem menuItem) {
-            switch (menuItem.getItemId()) {
-                case android.R.id.home:
-                    // ProjectsActivity is my 'home' activity
-                    startActivityAfterCleanup(MainActivity.class);
-                    return true;
+    private void lastpage_or_home(){
+        imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG,"back to last page: is clicked...");
+                Intent intent1 = new Intent(DisplayStoreActivity.this, GoToBreakfastActivity.class);
+                startActivity(intent1);
             }
-            return (super.onOptionsItemSelected(menuItem));
-        }
+        });
 
-        private void startActivityAfterCleanup(Class<?> cls) {
-            //if (DisplayStoreActivity.Dao != null) projectsDao.close();
-            Intent intent = new Intent(getApplicationContext(), cls);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-        }*/
-
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(DisplayStoreActivity.this, MainActivity.class);
+                startActivity(intent2);
+            }
+        });
+    }
 }

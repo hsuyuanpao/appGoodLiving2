@@ -9,7 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,13 +25,10 @@ public class GoToBreakfastActivity extends AppCompatActivity {
         setContentView(R.layout.activity_go_to_breakfast);
 
         Toolbar toolbar = findViewById(R.id.toolBarBreakfast);
-        setSupportActionBar(toolbar);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("早餐推薦");
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_back);
-
+        TextView textView = findViewById(R.id.toolbarTitle);
+        ImageView imageView1 = findViewById(R.id.imviewTop1);
+        ImageView imageView2 = findViewById(R.id.imviewTop2);
+        textView.setText("早餐推薦");
 
         ListView list = findViewById(R.id.listEat);
         Log.d(TAG, "onCreate: Started.");
@@ -104,6 +103,23 @@ public class GoToBreakfastActivity extends AppCompatActivity {
                 intent.putExtra("store_no", i);
 
                 startActivity(intent);
+            }
+        });
+
+        imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG,"back to last page: is clicked...");
+                Intent intent1 = new Intent(GoToBreakfastActivity.this, EatActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(GoToBreakfastActivity.this, MainActivity.class);
+                startActivity(intent2);
             }
         });
     }

@@ -24,7 +24,7 @@ public class EatActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("吃吃喝喝推薦");
+        actionBar.setTitle("        吃吃喝喝推薦");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_back);
 
