@@ -32,6 +32,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -315,7 +316,23 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
 
                             //place2 = new MarkerOptions().position(new LatLng(23.463234, 120.286120)).title("xxxxx");
                             mMap.addMarker(place2);
+                        /*    mMap.addMarker(new MarkerOptions()
+                                    .position(new LatLng(23.567821, 120.304643))
+                                    .title("朝天宮")
+                                    //.snippet("and snippet")
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));*/
 
+                            mMap.addMarker(new MarkerOptions()
+                                    .position(new LatLng(23.569478, 120.304146))
+                                    .title("好住民宿")
+                                    //.snippet("and snippet")
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+
+                         /* mMap.addMarker(new MarkerOptions()
+                                    .position(new LatLng(23.566283, 120.304764))
+                                    .title("好住背包客棧")
+                                    //.snippet("and snippet")
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));*/
                             new FetchURL(DisplayInformationActivity.this)
                                     .execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
 

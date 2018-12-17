@@ -322,6 +322,11 @@ public class Maps2Activity extends FragmentActivity implements OnMapReadyCallbac
                                     .title("好住民宿")
                                     //.snippet("and snippet")
                                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+                        /*    mMap.addMarker(new MarkerOptions()
+                                    .position(new LatLng(23.566283, 120.304764))
+                                    .title("好住背包客棧")
+                                    //.snippet("and snippet")
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));*/
 
                             new FetchURL(Maps2Activity.this)
                                     .execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
