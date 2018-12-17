@@ -28,7 +28,9 @@ public class FBActivity extends AppCompatActivity {
         TextView tvTitle = findViewById(R.id.toolbarTitle);
         ImageView imTop1 = findViewById(R.id.imviewTop1);
         ImageView imTop2 = findViewById(R.id.imviewTop2);
-        tvTitle.setText("Facebook");
+        String name = getIntent().getStringExtra("title");   //景點名稱
+        //Toast.makeText(this, "Information of no: " + no, Toast.LENGTH_SHORT).show();
+        tvTitle.setText(name);
 
         WebView mWebView = findViewById(R.id.webView);
         WebSettings webSettings = mWebView.getSettings();

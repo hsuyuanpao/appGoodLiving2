@@ -134,4 +134,30 @@
         <item>120.301683</item>
     </string-array>
 
+    <string-array name="att_lat">
+        <item>23.567821</item>
+        <item>23.564336</item>
+        <item>23.571701</item>
+        <item>23.580034</item>
+        <item>23.564532</item>
+        <item>23.571280</item>
+        <item>23.566802</item>
+        <item>23.581049</item>
+        <item>23.562249</item>
+        <item>23.567739</item>
+    </string-array>
+
+    <string-array name="att_lng">
+        <item>120.304643</item>
+        <item>120.303956</item>
+        <item>120.305920</item>
+        <item>120.294715</item>
+        <item>120.305663 </item>
+        <item>120.304913</item>
+        <item>120.303424</item>
+        <item>120.299154</item>
+        <item>120.303619</item>
+        <item>120.302858</item>
+    </string-array>
+
 </resources>

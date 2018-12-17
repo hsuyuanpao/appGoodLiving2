@@ -101,7 +101,9 @@ public class DisplayActivity extends AppCompatActivity {
 
     public void GoToMapsActivity(View view) {
         Log.d(TAG,"MapsActivity: is preparing to run...");
-        Intent intent = new Intent(this, MapsActivity.class);
+        Intent intent = new Intent(this, Maps2Activity.class);
+        intent.putExtra("attraction_no", i);    //傳景點編號
+        intent.putExtra("name", r_title);   //傳景點名稱
         startActivity(intent);
     }
 

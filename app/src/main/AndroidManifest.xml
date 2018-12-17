@@ -134,7 +134,8 @@
         <activity
             android:name=".DisplayInformationActivity"
             android:label="@string/title_activity_display_information" />
-        <activity android:name=".DisplayInformation2Activity"></activity>
+        <activity android:name=".DisplayInformation2Activity" />
+        <activity android:name=".Maps2Activity"></activity>
     </application>
 
 </manifest>
