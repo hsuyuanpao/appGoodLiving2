@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.net.Uri;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Objects;
@@ -55,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         Log.d(TAG,"onCreate: showing home icon...");
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
+
+        TextView tv = findViewById(R.id.mytv);
+        tv.setFocusable(true);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nvView);

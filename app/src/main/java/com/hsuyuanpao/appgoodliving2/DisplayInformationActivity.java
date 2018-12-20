@@ -28,6 +28,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -35,6 +36,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -52,7 +55,7 @@ import static com.hsuyuanpao.appgoodliving2.MainActivity.i;
 public class DisplayInformationActivity extends FragmentActivity implements OnMapReadyCallback, TaskLoadedCallback {
     private static final String TAG = "DisplayInfoActivity";
     private GoogleMap mMap;
-    public MarkerOptions place1, place2;
+    public MarkerOptions place1, place2, hodua, backpack;
     //Button getDirection;
     private Polyline currentPolyline;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1001;
@@ -60,6 +63,7 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
     private FusedLocationProviderClient mFusedLocationProviderClient;
     private List<String> listlat;
     private List<String> listlng;
+    public  List<Marker> markersList = new ArrayList<Marker>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -311,31 +315,70 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
                             Log.d(TAG, "getDeviceLocation: get place1 latlng: "+ place1.getPosition());
                             mMap.addMarker(place1);
 
-                            mMap.moveCamera(CameraUpdateFactory.newLatLng(mLatLng));
-                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,13));
+                            //mMap.moveCamera(CameraUpdateFactory.newLatLng(mLatLng));
+                            //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,13));
 
                             //place2 = new MarkerOptions().position(new LatLng(23.463234, 120.286120)).title("xxxxx");
                             mMap.addMarker(place2);
-                        /*    mMap.addMarker(new MarkerOptions()
-                                    .position(new LatLng(23.567821, 120.304643))
-                                    .title("朝天宮")
-                                    //.snippet("and snippet")
-                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));*/
+                            hodua = new MarkerOptions()
+                                    .position(new LatLng(23.569478, 120.304146))
+                                    .title("好住民宿")
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
+                            backpack = new MarkerOptions()
+                                    .position(new LatLng(23.566283, 120.304764))
+                                    .title("好住背包客棧")
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
 
                             mMap.addMarker(new MarkerOptions()
                                     .position(new LatLng(23.569478, 120.304146))
                                     .title("好住民宿")
                                     //.snippet("and snippet")
                                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-
-                         /* mMap.addMarker(new MarkerOptions()
+                            mMap.addMarker(new MarkerOptions()
                                     .position(new LatLng(23.566283, 120.304764))
                                     .title("好住背包客棧")
                                     //.snippet("and snippet")
-                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));*/
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+
+                            Marker p1 = mMap.addMarker(place1);
+                            Marker p2 = mMap.addMarker(place2);
+                            Marker hd = mMap.addMarker(hodua);
+                            Marker bp = mMap.addMarker(backpack);
+
+                            markersList.add(p1);    //目前位置
+                            markersList.add(p2);    //景點位置
+                            markersList.add(hd);    //好住民宿
+                            markersList.add(bp);    //好住背包客棧
+
+                            LatLngBounds.Builder builder = new LatLngBounds.Builder();
+                            for (Marker marker : markersList) {
+                                builder.include(marker.getPosition());
+                            }
+
+                           /* LatLngBounds bounds = builder.build();
+                            CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, 10);
+                            mMap.moveCamera(cu);**/
+                            /**initialize the padding for map boundary*/
+                            int padding = 50;
+                            /**create the bounds from latlngBuilder to set into map camera*/
+                            LatLngBounds bounds = builder.build();
+                            /*final int zoomWidth = getResources().getDisplayMetrics().widthPixels;
+                            final int zoomHeight = getResources().getDisplayMetrics().heightPixels;*/
+                            /**create the camera with bounds and padding to set into map*/
+                            //final CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, zoomWidth, zoomHeight,  padding);
+                            final CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds,  padding);
                             new FetchURL(DisplayInformationActivity.this)
                                     .execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
 
+                            /**call the map call back to know map is loaded or not*/
+                            //mMap.animateCamera(cu);
+                            mMap.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
+                                @Override
+                                public void onMapLoaded() {
+                                    /**set animated zoom camera into map*/
+                                    mMap.animateCamera(cu);
+                                }
+                            });
                         }
                         else{
                             new AlertDialog.Builder(DisplayInformationActivity.this)

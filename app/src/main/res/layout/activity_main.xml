@@ -26,8 +26,22 @@
                 />
         </android.support.design.widget.AppBarLayout>
 
+        <TextView
+            android:id="@+id/mytv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="欲知最新消息，請登入好住民宿臉書網頁!"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="-1"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_below="@id/appbarTop"/>
+        <requestFocus />
+
         <ImageView
-            android:layout_below="@+id/appbarTop"
+            android:layout_below="@+id/mytv"
             android:layout_above="@id/appbarButtom"
             android:id="@+id/imView1"
             android:layout_width="wrap_content"
