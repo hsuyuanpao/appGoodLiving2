@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
 
         TextView tv = findViewById(R.id.mytv);
-        tv.setFocusable(true);
+        tv.setSelected(true);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nvView);

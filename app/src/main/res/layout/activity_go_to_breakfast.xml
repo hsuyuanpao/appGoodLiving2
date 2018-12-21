@@ -19,9 +19,15 @@
             />
     </android.support.design.widget.AppBarLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
     <include
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="65"
         android:layout_below="@id/appBarBreakfast"
         layout="@layout/activity_go_to_breakfast_core"
         android:id="@+id/imView1"
@@ -29,7 +35,9 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="35"
         android:layout_below="@id/imView1"
         android:id="@+id/listEat"/>
+    </LinearLayout>
 </RelativeLayout>
