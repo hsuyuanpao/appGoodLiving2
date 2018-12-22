@@ -368,7 +368,7 @@ public class Maps2Activity extends FragmentActivity implements OnMapReadyCallbac
                             //final CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, zoomWidth, zoomHeight,  padding);
                             final CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds,  padding);
                             new FetchURL(Maps2Activity.this)
-                                    .execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
+                                    .execute(getUrl(place1.getPosition(), place2.getPosition(), "walking"), "walking");
 
                             /**call the map call back to know map is loaded or not*/
                             //mMap.animateCamera(cu);
