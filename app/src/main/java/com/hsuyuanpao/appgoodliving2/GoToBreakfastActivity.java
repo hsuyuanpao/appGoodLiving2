@@ -38,17 +38,17 @@ public class GoToBreakfastActivity extends AppCompatActivity {
         final ArrayList phones = new ArrayList();
         final ArrayList name_only = new ArrayList();
 
-        names.add("1.   東記永和豆漿     >>");
-        names.add("2.     共匪的店           >>");
-        names.add("3.   飛在香菇肉羹     >>");
-        names.add("4.    輝煌牛肉湯        >>");
-        names.add("5.    瑞文煎盤粿        >>");
+        names.add("1.   東記永和豆漿   >>");
+        names.add("2.    共匪的店    >>");
+        names.add("3.   飛在香菇肉羹   >>");
+        names.add("4.    輝煌牛肉湯    >>");
+        names.add("5.    瑞文煎盤粿    >>");
         names.add("6.  老等油飯麵線糊  >>");
-        names.add("7.      肉粽財              >>");
-        names.add("8.   土城土魠魚羹     >>");
-        names.add("9.    陳家煎盤粿        >>");
-        names.add("10.   阿國黑豆漿        >>");
-        names.add("11.   阿豐麵線糊        >>");
+        names.add("7.      肉粽財      >>");
+        names.add("8.   土城土魠魚羹   >>");
+        names.add("9.    陳家煎盤粿    >>");
+        names.add("10.   阿國黑豆漿    >>");
+        names.add("11.   阿豐麵線糊    >>");
 
         addresses.add("地址: 651雲林縣北港鎮文化路91號");
         addresses.add("地址: 651雲林縣北港鎮公民路");

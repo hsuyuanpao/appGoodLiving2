@@ -17,21 +17,40 @@
             />
     </android.support.design.widget.AppBarLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv1"
+        android:textSize="18sp"
+        android:background="#cde2ff"
+        android:textStyle="bold"
+        android:layout_below="@id/appbarTop"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv2"
+        android:background="#cde2ff"
+        android:layout_below="@+id/tv1"
+        android:textSize="18sp"
+        android:elevation="5dp"
+        android:translationZ="5dp"
+        android:textStyle="bold"/>
+
     <com.github.chrisbanes.photoview.PhotoView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/imView1"
-            android:layout_below="@+id/appbarTop">
+            android:layout_below="@+id/tv2"
+            >
 
     </com.github.chrisbanes.photoview.PhotoView>
 
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/appbarTop"
-        android:background="#008000"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv2"
+        android:background="#4026e8"
         android:src="@drawable/ic_zoom_in" />
-
 
 </RelativeLayout>

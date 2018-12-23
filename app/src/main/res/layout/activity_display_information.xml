@@ -16,6 +16,27 @@
             android:id="@+id/toolbarTop"
             />
     </android.support.design.widget.AppBarLayout>
+<!--
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv1"
+        android:textSize="18sp"
+        android:background="#cde2ff"
+        android:textStyle="bold"
+        android:layout_below="@id/appbarTop"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv2"
+        android:background="#cde2ff"
+        android:layout_below="@+id/tv1"
+        android:textSize="18sp"
+        android:elevation="5dp"
+        android:translationZ="5dp"
+        android:textStyle="bold"/>
+-->
+
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"

@@ -32,27 +32,29 @@ public class InformationActivity extends AppCompatActivity {
 
         final ArrayList names = new ArrayList();
         final ArrayList name_only = new ArrayList();
+        final ArrayList address = new ArrayList<>();
+        final ArrayList phone = new ArrayList();
 
-        names.add("1.         朝天宮         >>");
-        names.add("2.         武德宮         >>");
-        names.add("3.       北港圖書館       >>");
-        names.add("4.      北港文化中心      >>");
-        names.add("5.        建國中學        >>");
-        names.add("6.        北港高中        >>");
-        names.add("7.        北港國中        >>");
-        names.add("8.       港媽祖醫院       >>");
-        names.add("9.  北港鎮公所免費停車場  >>");
-        names.add("10.      北港遊客中心      >>");
-        names.add("11. 全家(北港天后店)- 中山路 >>");
-        names.add("12. 7-11(朝天宮門市)- 中山路 >>");
-        names.add("13.     台西客運北港站     >>");
-        names.add("14.     統聯客運北港站     >>");
-        names.add("15.     嘉義客運北港站     >>");
-        names.add("16.        164 縣道        >>");
-        names.add("17.        145 縣道        >>");
-        names.add("18.        159 縣道        >>");
-        names.add("19.     高鐵接駁車資訊     >>");
-        names.add("20. 北港媽祖醫院免費接駁資訊 >>");
+        names.add("1.       朝天宮       >>");
+        names.add("2.       武德宮       >>");
+        names.add("3.     北港圖書館     >>");
+        names.add("4.    北港文化中心    >>");
+        names.add("5.      建國中學      >>");
+        names.add("6.      北港高中      >>");
+        names.add("7.      北港國中      >>");
+        names.add("8.     港媽祖醫院     >>");
+        names.add("9. 北港鎮公所免費停車場 >>");
+        names.add("10.    北港遊客中心    >>");
+        names.add("11.  全家(北港天后店)  >>");
+        names.add("12.  7-11(朝天宮門市)  >>");
+        names.add("13.   台西客運北港站   >>");
+        names.add("14.   統聯客運北港站   >>");
+        names.add("15.   嘉義客運北港站   >>");
+        names.add("16.      164 縣道      >>");
+        names.add("17.      145 縣道      >>");
+        names.add("18.      159 縣道      >>");
+        names.add("19.   高鐵接駁車資訊   >>");
+        names.add("20. 媽祖醫院免費接駁車 >>");
 
         name_only.add("朝天宮");
         name_only.add("武德宮");
@@ -64,8 +66,8 @@ public class InformationActivity extends AppCompatActivity {
         name_only.add("北港媽祖醫院");
         name_only.add("北港鎮公所免費停車場");
         name_only.add("北港遊客中心");
-        name_only.add("全家(北港天后店)-中山路");
-        name_only.add("7-11(朝天宮門市)-中山路");
+        name_only.add("全家(北港天后店)");
+        name_only.add("7-11(朝天宮門市)");
         name_only.add("台西客運北港站");
         name_only.add("統聯客運北港站");
         name_only.add("嘉義客運北港站");
@@ -73,7 +75,49 @@ public class InformationActivity extends AppCompatActivity {
         name_only.add("145 縣道");
         name_only.add("159 縣道");
         name_only.add("高鐵接駁車資訊");
-        name_only.add("北港媽祖醫院免費接駁資訊");
+        name_only.add("媽祖醫院免費接駁資訊");
+
+        address.add("651雲林縣北港鎮中山路178號");
+        address.add("651雲林縣北港鎮華勝路330號");
+        address.add("651雲林縣北港鎮北辰路2-5號");
+        address.add("651雲林縣北港鎮公園路66號");
+        address.add("651雲林縣北港鎮大同路468號");
+        address.add("651雲林縣北港鎮成功路26號");
+        address.add("651雲林縣北港鎮民生路102號");
+        address.add("651雲林縣北港鎮新德路123號");
+        address.add("651雲林縣北港鎮文昌路78號");
+        address.add("651雲林縣北港鎮民生路1號");
+        address.add("651雲林縣北港鎮中山路90號");
+        address.add("651雲林縣北港鎮中山路150號");
+        address.add("651雲林縣北港鎮中正路119號");
+        address.add("651雲林縣北港鎮中正路127號");
+        address.add("651雲林縣北港鎮文化路89號");
+        address.add("");
+        address.add("");
+        address.add("");
+        address.add("651雲林縣北港鎮文化路89號");
+        address.add("651雲林縣北港鎮新德路123號");
+
+        phone.add("05 783 2055");
+        phone.add("05 782 1445");
+        phone.add("05 782 2836");
+        phone.add("05 783 2999");
+        phone.add("05 783 2724");
+        phone.add("05 783 2022");
+        phone.add("05 783 2022");
+        phone.add("05 783 7901");
+        phone.add("");
+        phone.add("05 783 7427(免費腳踏車租用)");
+        phone.add("05 783 7465");
+        phone.add("05 782 4873");
+        phone.add("05 782 0574");
+        phone.add("05 782 0574");
+        phone.add("05 783 2135");
+        phone.add("");
+        phone.add("");
+        phone.add("");
+        phone.add("05 783 2135");
+        phone.add("05 783 7901 轉 8858");
 
         ArrayAdapter adapter = new ArrayAdapter(this, R.layout.list_information_layout, names);
         list.setAdapter(adapter);
@@ -88,6 +132,8 @@ public class InformationActivity extends AppCompatActivity {
                     //Toast.makeText(InformationActivity.this, "You clicked on: " + name_only.get(i), Toast.LENGTH_LONG).show();
                     //Log.d(TAG, "onItemClick: name: " + names.get(i) + "no:" + i);
                     intent1.putExtra("name", name_only.get(i).toString());
+                    intent1.putExtra("address", address.get(i).toString());
+                    intent1.putExtra("phone", phone.get(i).toString());
                     intent1.putExtra("no", i); //傳編號
                     startActivity(intent1);
                 }
@@ -96,6 +142,8 @@ public class InformationActivity extends AppCompatActivity {
                     //Toast.makeText(InformationActivity.this, "You clicked on: " + name_only.get(i), Toast.LENGTH_LONG).show();
                     //Log.d(TAG, "onItemClick: name: " + names.get(i) + "no:" + i);
                     intent2.putExtra("name", name_only.get(i).toString());
+                    intent2.putExtra("address", address.get(i).toString());
+                    intent2.putExtra("phone", phone.get(i).toString());
                     intent2.putExtra("no", i); //傳編號
                     startActivity(intent2);
                 }

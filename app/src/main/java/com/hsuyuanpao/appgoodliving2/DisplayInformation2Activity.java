@@ -18,8 +18,16 @@ public class DisplayInformation2Activity extends AppCompatActivity {
         //Toolbar toolbar = findViewById(R.id.toolbarTop2);
         TextView textView = findViewById(R.id.toolbarTitle);
         ImageView iv = findViewById(R.id.imView1);
+        TextView tvaddress = findViewById(R.id.tv1);
+        TextView tvphone = findViewById(R.id.tv2);
+
         String name = getIntent().getStringExtra("name");
+        String address = getIntent().getStringExtra("address");
+        String phone = getIntent().getStringExtra("phone");
+
         textView.setText(name);
+        tvaddress.setText("地址: " + address);
+        tvphone.setText("電話: " + phone);
         int no = getIntent().getIntExtra("no",0);
         if(no == 18){
             iv.setImageResource(R.drawable.hst_schedule1);

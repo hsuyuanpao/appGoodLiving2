@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.webkit.WebView;
-import android.widget.Button;
 
 import com.github.chrisbanes.photoview.PhotoView;
 
@@ -45,6 +43,11 @@ public class GoToGoodLivingActivity extends AppCompatActivity {
 
     public void GoToGoodLivingBackpackWebsite(View view) {
         Intent intent = new Intent(this, GoToGoodLivingBackpackWebsiteActivity.class);
+        startActivity(intent);
+    }
+
+    public void GoToGoodLivingFB(View view) {
+        Intent intent = new Intent(this, GoodLivingFBActivity.class);
         startActivity(intent);
     }
 }
