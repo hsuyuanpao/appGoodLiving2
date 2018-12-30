@@ -22,6 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static android.media.CamcorderProfile.get;
+import static com.hsuyuanpao.appgoodliving2.MainActivity.i;
 
 public class DisplayStoreActivity extends AppCompatActivity {
     private static final String TAG = "DispStoreActivity";
@@ -112,8 +113,23 @@ public class DisplayStoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d(TAG,"back to last page: is clicked...");
-                Intent intent1 = new Intent(DisplayStoreActivity.this, GoToBreakfastActivity.class);
-                startActivity(intent1);
+                switch(i){
+                    case 1:
+                        Intent intent1 = new Intent(DisplayStoreActivity.this, GoToBreakfastActivity.class);
+                        startActivity(intent1);
+                    case 2:
+                        Intent intent2 = new Intent(DisplayStoreActivity.this, LunchActivity.class);
+                        startActivity(intent2);
+             /*       case 3:
+                        Intent intent3 = new Intent(DisplayStoreActivity.this, AfternoonteaActivity.class);
+                        startActivity(intent3);
+                    case 4:
+                        Intent intent4 = new Intent(DisplayStoreActivity.this, DinnerActivity.class);
+                        startActivity(intent4);*/
+
+                }
+
+
             }
         });
 

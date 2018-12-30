@@ -136,7 +136,8 @@
             android:label="@string/title_activity_display_information" />
         <activity android:name=".DisplayInformation2Activity" />
         <activity android:name=".Maps2Activity" />
-        <activity android:name=".GoodLivingFBActivity"></activity>
+        <activity android:name=".GoodLivingFBActivity" />
+        <activity android:name=".LunchActivity"></activity>
     </application>
 
 </manifest>

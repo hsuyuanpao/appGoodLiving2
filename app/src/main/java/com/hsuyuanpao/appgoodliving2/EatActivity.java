@@ -35,4 +35,9 @@ public class EatActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void GoToLunch(View view) {
+        Intent intent = new Intent(this, LunchActivity.class);
+        startActivity(intent);
+    }
 }

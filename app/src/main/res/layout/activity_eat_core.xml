@@ -65,7 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:background="@drawable/breakfast1_1"
+                    android:background="@drawable/eat1"
                     android:scaleType="centerInside"
                     android:onClick="GoToBreakfast"
                     />
@@ -88,7 +88,8 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/lunch5_1"/>
+                    android:background="@drawable/eat2"
+                    android:onClick="GoToLunch"/>
             </android.support.v7.widget.CardView>
         </LinearLayout>
 
@@ -118,7 +119,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/afternoon_tea6_1"
+                    android:background="@drawable/eat3"
                     android:scaleType="centerInside"
                     />
             </android.support.v7.widget.CardView>
@@ -138,7 +139,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/dinner6_1"/>
+                    android:background="@drawable/eat4"/>
             </android.support.v7.widget.CardView>
         </LinearLayout>
 

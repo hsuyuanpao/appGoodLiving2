@@ -7,15 +7,15 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".GoToBreakfastActivity">
+    tools:context=".LunchActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/appBarBreakfast">
+        android:id="@+id/appBarLunch">
         <include
             layout="@layout/toolbar_layout_top"
-            android:id="@+id/toolBarBreakfast"
+            android:id="@+id/toolBarLunch"
             />
     </android.support.design.widget.AppBarLayout>
 
@@ -23,21 +23,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="100"
-        android:layout_below="@id/appBarBreakfast">
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="50"
-        layout="@layout/activity_go_to_breakfast_core"
-        android:id="@+id/imView1"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        android:layout_below="@+id/appBarLunch"
+        android:weightSum="100">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="50"
-        android:layout_below="@id/imView1"
-        android:id="@+id/listEat"/>
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            layout="@layout/activity_lunch_core"
+            android:id="@+id/imView1"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            android:layout_below="@id/imView1"
+            android:id="@+id/listLunch"/>
     </LinearLayout>
 </RelativeLayout>
