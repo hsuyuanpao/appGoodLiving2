@@ -28,6 +28,7 @@ public class DisplayStoreActivity extends AppCompatActivity {
     private static final String TAG = "DispStoreActivity";
     private List<String> list;
     private static ImageView imageView1, imageView2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,13 +44,13 @@ public class DisplayStoreActivity extends AppCompatActivity {
         String address = getIntent().getStringExtra("address");
         String phone = getIntent().getStringExtra("phone");
 
-        textView.setText(name);
+        textView.setText(name); //在工具列中央，顯示店名
 
         TextView tv1 = findViewById(R.id.tv1);
         TextView tv2 = findViewById(R.id.tv2);
 
-        tv1.setText(address);
-        tv2.setText(phone);
+        tv1.setText(address);   //顯示地址
+        tv2.setText(phone);     //顯示電話
 
         WebView mWebView = findViewById(R.id.webView);
         WebSettings webSettings = mWebView.getSettings();
@@ -85,59 +86,61 @@ public class DisplayStoreActivity extends AppCompatActivity {
                 list = Arrays.asList(getResources().getStringArray(R.array.breakfast_store_url));
                 String url = list.get(getIntent().getIntExtra("store_no", 0));
                 mWebView.loadUrl(url);
-                lastpage_or_home();
-                return;
+                lastpage_or_home(i);
+
+                break;
             case 2: //lunch
                 list = Arrays.asList(getResources().getStringArray(R.array.lunch_store_url));
                 url = list.get(getIntent().getIntExtra("store_no", 0));
                 mWebView.loadUrl(url);
-                lastpage_or_home();
-                return;
+                lastpage_or_home(i);
+                break;
             case 3: //afternoon tea
                 list = Arrays.asList(getResources().getStringArray(R.array.afternoontea_store_url));
                 url = list.get(getIntent().getIntExtra("store_no", 0));
                 mWebView.loadUrl(url);
-                lastpage_or_home();
-                return;
+                lastpage_or_home(i);
+                break;
             case 4: //dinner
                 list = Arrays.asList(getResources().getStringArray(R.array.dinner_store_url));
                 url = list.get(getIntent().getIntExtra("store_no", 0));
                 mWebView.loadUrl(url);
-                lastpage_or_home();
-                return;
+                lastpage_or_home(i);
+                break;
         }
     }
 
-    private void lastpage_or_home(){
+    private void lastpage_or_home(final int i){
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG,"back to last page: is clicked...");
+                Log.d(TAG,"back to last page: is clicked..., and i = "+i );
                 switch(i){
                     case 1:
-                        Intent intent1 = new Intent(DisplayStoreActivity.this, GoToBreakfastActivity.class);
+                       Intent intent1 = new Intent(DisplayStoreActivity.this, GoToBreakfastActivity.class);
                         startActivity(intent1);
+                        break;
                     case 2:
                         Intent intent2 = new Intent(DisplayStoreActivity.this, LunchActivity.class);
                         startActivity(intent2);
-             /*       case 3:
+                        break;
+                    case 3:
                         Intent intent3 = new Intent(DisplayStoreActivity.this, AfternoonteaActivity.class);
                         startActivity(intent3);
+                        break;
                     case 4:
                         Intent intent4 = new Intent(DisplayStoreActivity.this, DinnerActivity.class);
-                        startActivity(intent4);*/
-
+                        startActivity(intent4);
+                        break;
                 }
-
-
             }
         });
 
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(DisplayStoreActivity.this, MainActivity.class);
-                startActivity(intent2);
+                Intent intent5 = new Intent(DisplayStoreActivity.this, MainActivity.class);
+                startActivity(intent5);
             }
         });
     }

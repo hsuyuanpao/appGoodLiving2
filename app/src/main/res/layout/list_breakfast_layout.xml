@@ -4,7 +4,7 @@
         android:layout_height="50sp"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textAlignment="center"
+
         android:textColor="@color/colorPrimaryDark"
         android:background="#f0f8ff"
         android:gravity="center"/>

@@ -5,6 +5,6 @@
     android:textSize="18sp"
     android:textStyle="bold"
 
-    android:textColor="#eee1e1"
-    android:background="#2b0301"
+    android:textColor="#f2e1a4"
+    android:background="#152901"
     android:gravity="center"/>

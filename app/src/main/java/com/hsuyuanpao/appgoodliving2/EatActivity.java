@@ -31,13 +31,27 @@ public class EatActivity extends AppCompatActivity {
     }
 
     public void GoToBreakfast(View view) {
-        Intent intent = new Intent(this, GoToBreakfastActivity.class);
-        startActivity(intent);
+        Log.d(TAG,"go to breakfast page: is clicked...");
+        Intent intent1 = new Intent(this, GoToBreakfastActivity.class);
+        startActivity(intent1);
 
     }
 
     public void GoToLunch(View view) {
-        Intent intent = new Intent(this, LunchActivity.class);
-        startActivity(intent);
+        Log.d(TAG,"go to lunch page: is clicked...");
+        Intent intent2 = new Intent(this, LunchActivity.class);
+        startActivity(intent2);
+    }
+
+    public void GoToAfternoontea(View view) {
+        Log.d(TAG,"go to afternoontea page: is clicked...");
+        Intent intent3 = new Intent(this, AfternoonteaActivity.class);
+        startActivity(intent3);
+    }
+
+    public void GoToDinner(View view) {
+        Log.d(TAG,"go to dinner page: is clicked...");
+        Intent intent4 = new Intent(this, DinnerActivity.class);
+        startActivity(intent4);
     }
 }

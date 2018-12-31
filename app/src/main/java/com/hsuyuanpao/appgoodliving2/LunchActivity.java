@@ -36,14 +36,14 @@ public class LunchActivity extends AppCompatActivity {
         final ArrayList phones = new ArrayList();
         final ArrayList name_only = new ArrayList();
 
-        names.add("1.   阿等土豆油飯   >>");
-        names.add("2.    李記生炒鴨肉羹    >>");
-        names.add("3.   加運包子店   >>");
-        names.add("4.    九久醇義麵坊    >>");
-        names.add("5.    老受鴨肉飯   >>");
-        names.add("6.  福安鴨肉飯  >>");
-        names.add("7.      青松餐廳      >>");
-        names.add("8.   吉輝餐廳   >>");
+        names.add("1.　-阿等土豆油飯-　>>");
+        names.add("2.　李記生炒鴨肉羹　>>");
+        names.add("3.　　加運包子店　　>>");
+        names.add("4.　-九久醇義麵坊-　>>");
+        names.add("5.　　老受鴨肉飯　　>>");
+        names.add("6.　　福安鴨肉飯　　>>");
+        names.add("7.　　-青松餐廳-　　>>");
+        names.add("8.　　-吉輝餐廳-　　>>");
 
         addresses.add("地址: 651雲林縣北港鎮大同路79號");
         addresses.add("地址: 651雲林縣北港鎮公民路42號");
