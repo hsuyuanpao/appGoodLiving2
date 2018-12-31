@@ -14,6 +14,9 @@
         <item>https://www.instagram.com/explore/locations/213556969/-/</item>
         <item>http://picdeer.com/tag/%E5%8C%97%E6%B8%AF%E8%A7%80%E5%85%89%E5%A4%A7%E6%A9%8B</item>
         <item>https://www.instagweb.com/tag/%E5%8C%97%E6%B8%AF</item>
+        <item>http://gramha.com/explore-hashtag/%E5%8C%97%E6%B8%AF%E5%A5%BD%E4%BD%8F%E8%83%8C%E5%8C%85%E5%AE%A2%E6%A3%A7</item>
+        <item>http://www.instahu.com/location/1524109390989108/%E5%8C%97%E6%B8%AF%E5%82%B3%E8%96%AA%E5%AD%B8%E9%99%A2%E5%85%89%E6%98%8E%E5%B1%8B</item>
+        <item>https://www.instagram.com/explore/tags/%E5%AA%BD%E7%A5%96%E6%99%AF%E8%A7%80%E5%85%AC%E5%9C%92/</item>
 
 
     </string-array>
@@ -29,6 +32,9 @@
         <item>https://zh-tw.facebook.com/TheWudeTemple/</item>
         <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E8%A7%80%E5%85%89%E5%A4%A7%E6%A9%8B/565445066937418</item>
         <item>https://zh-tw.facebook.com/peikang.yimin.temple/</item>
+        <item>https://www.facebook.com/0932587227.com.tw/</item>
+        <item>https://zh-tw.facebook.com/PeikangTCH/</item>
+        <item>https://www.facebook.com/pages/%E5%AA%BD%E7%A5%96%E6%99%AF%E8%A7%80%E5%A4%A7%E6%A8%93/247101005315924</item>
 
     </string-array>
 
@@ -150,8 +156,12 @@
         <item>23.571280</item>
         <item>23.566802</item>
         <item>23.581049</item>
+
         <item>23.562249</item>
         <item>23.567739</item>
+        <item>23.569480</item>
+        <item>23.566684</item>
+        <item>23.568485</item>
     </string-array>
 
     <string-array name="att_lng">
@@ -163,8 +173,12 @@
         <item>120.304913</item>
         <item>120.303424</item>
         <item>120.299154</item>
+
         <item>120.303619</item>
         <item>120.302858</item>
+        <item>120.304150</item>
+        <item>120.301497</item>
+        <item>120.304875</item>
     </string-array>
 
 </resources>

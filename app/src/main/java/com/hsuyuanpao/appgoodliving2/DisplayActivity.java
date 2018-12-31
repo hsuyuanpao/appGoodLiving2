@@ -20,10 +20,12 @@ public class DisplayActivity extends AppCompatActivity {
     private static final String TAG = "DisplayActivity";
     private int[] images = {R.drawable.temple, R.drawable.oldstreet, R.drawable.daughterbridge,
             R.drawable.cattlemarket, R.drawable.watertower, R.drawable.drawingcommunity,
-            R.drawable.workshop, R.drawable.wudetemple, R.drawable.bridge, R.drawable.yimintemple};
+            R.drawable.workshop, R.drawable.wudetemple, R.drawable.bridge, R.drawable.yimintemple, R.drawable.hodua,
+            R.drawable.bookstore1_1, R.drawable.mazu_park1};
     private int[] imMap = {R.drawable.temple_map, R.drawable.oldstreet_map, R.drawable.daughterbridge_map,
                         R.drawable.cattlemarket_map, R.drawable.watertower_map, R.drawable.drawingcommunity_map,
-                        R.drawable.workshop_map, R.drawable.wudetemple_map, R.drawable.bridge_map, R.drawable.yimintemple_map};
+                        R.drawable.workshop_map, R.drawable.wudetemple_map, R.drawable.bridge_map, R.drawable.yimintemple_map,
+                        R.drawable.hodua_map_1, R.drawable.bookstore_map_1, R.drawable.mazu_park_map_1};
 
     ImageView imageView;
     ImageView imageView2;

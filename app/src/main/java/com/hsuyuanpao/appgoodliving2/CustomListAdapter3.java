@@ -26,7 +26,8 @@ public class CustomListAdapter3  extends ArrayAdapter<String>{
 
     private int[] img = {R.drawable.temple, R.drawable.oldstreet, R.drawable.daughterbridge,
                     R.drawable.cattlemarket, R.drawable.watertower, R.drawable.drawingcommunity,
-                    R.drawable.workshop, R.drawable.wudetemple, R.drawable.bridge, R.drawable.yimintemple};
+                    R.drawable.workshop, R.drawable.wudetemple, R.drawable.bridge, R.drawable.yimintemple,
+                    R.drawable.hodua, R.drawable.bookstore1_1, R.drawable.mazu_park1};
 
     static class ViewHolder{
         TextView title;
