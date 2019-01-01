@@ -139,7 +139,8 @@
         <activity android:name=".GoodLivingFBActivity" />
         <activity android:name=".LunchActivity" />
         <activity android:name=".AfternoonteaActivity" />
-        <activity android:name=".DinnerActivity"></activity>
+        <activity android:name=".DinnerActivity" />
+        <activity android:name=".MatsuActivity"></activity>
     </application>
 
 </manifest>

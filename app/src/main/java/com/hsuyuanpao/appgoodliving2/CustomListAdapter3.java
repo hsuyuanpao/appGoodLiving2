@@ -27,7 +27,8 @@ public class CustomListAdapter3  extends ArrayAdapter<String>{
     private int[] img = {R.drawable.temple, R.drawable.oldstreet, R.drawable.daughterbridge,
                     R.drawable.cattlemarket, R.drawable.watertower, R.drawable.drawingcommunity,
                     R.drawable.workshop, R.drawable.wudetemple, R.drawable.bridge, R.drawable.yimintemple,
-                    R.drawable.hodua, R.drawable.bookstore1_1, R.drawable.mazu_park1};
+                    R.drawable.hodua, R.drawable.bookstore1_1, R.drawable.mazu_park1, R.drawable.sport_park_1,
+                    R.drawable.cultural_center};
 
     static class ViewHolder{
         TextView title;
@@ -71,12 +72,19 @@ public class CustomListAdapter3  extends ArrayAdapter<String>{
             public void onClick(View view) {
                 Log.d(TAG,"onClick: try to send image..."+ position);
                 // Toast.makeText(context, cd.getTitle(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(context, DisplayActivity.class);
-                intent.putExtra("image_title", list_title.get(position));
-                intent.putExtra("image_description",list_description.get(position));
-                intent.putExtra("image", position);
+                if(position == 0){
+                    Intent intent1 = new Intent(context, MatsuActivity.class);
+                    intent1.putExtra("image_title", list_title.get(position));
+                    context.startActivity(intent1);
+                }
+                else {
+                    Intent intent = new Intent(context, DisplayActivity.class);
+                    intent.putExtra("image_title", list_title.get(position));
+                    intent.putExtra("image_description", list_description.get(position));
+                    intent.putExtra("image", position);
 
-                context.startActivity(intent);
+                    context.startActivity(intent);
+                }
             }
         });
 

@@ -12,11 +12,14 @@
         <item>https://www.instagram.com/explore/locations/1291201107605046/</item>
         <item>https://www.instagram.com/explore/locations/254649958/</item>
         <item>https://www.instagram.com/explore/locations/213556969/-/</item>
+
         <item>http://picdeer.com/tag/%E5%8C%97%E6%B8%AF%E8%A7%80%E5%85%89%E5%A4%A7%E6%A9%8B</item>
         <item>https://www.instagweb.com/tag/%E5%8C%97%E6%B8%AF</item>
         <item>http://gramha.com/explore-hashtag/%E5%8C%97%E6%B8%AF%E5%A5%BD%E4%BD%8F%E8%83%8C%E5%8C%85%E5%AE%A2%E6%A3%A7</item>
         <item>http://www.instahu.com/location/1524109390989108/%E5%8C%97%E6%B8%AF%E5%82%B3%E8%96%AA%E5%AD%B8%E9%99%A2%E5%85%89%E6%98%8E%E5%B1%8B</item>
         <item>https://www.instagram.com/explore/tags/%E5%AA%BD%E7%A5%96%E6%99%AF%E8%A7%80%E5%85%AC%E5%9C%92/</item>
+        <item>https://www.instagram.com/explore/locations/1207037/</item>
+        <item>https://www.instagram.com/explore/locations/1020052544/</item>
 
 
     </string-array>
@@ -30,11 +33,14 @@
         <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E5%85%AC%E9%A4%A8%E9%87%8C%E5%BD%A9%E7%B9%AA%E7%A4%BE%E5%8D%80/1753364164896927</item>
         <item>https://zh-tw.facebook.com/beigang.craft/</item>
         <item>https://zh-tw.facebook.com/TheWudeTemple/</item>
+
         <item>https://www.facebook.com/pages/%E5%8C%97%E6%B8%AF%E8%A7%80%E5%85%89%E5%A4%A7%E6%A9%8B/565445066937418</item>
         <item>https://zh-tw.facebook.com/peikang.yimin.temple/</item>
         <item>https://www.facebook.com/0932587227.com.tw/</item>
         <item>https://zh-tw.facebook.com/PeikangTCH/</item>
         <item>https://www.facebook.com/pages/%E5%AA%BD%E7%A5%96%E6%99%AF%E8%A7%80%E5%A4%A7%E6%A8%93/247101005315924</item>
+        <item>https://zh-tw.facebook.com/pages/%E5%8C%97%E6%B8%AF%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92/165208386865595</item>
+        <item>https://zh-tw.facebook.com/beigang7832999/</item>
 
     </string-array>
 
@@ -162,6 +168,8 @@
         <item>23.569480</item>
         <item>23.566684</item>
         <item>23.568485</item>
+        <item>23.576660</item>
+        <item>23.578636</item>
     </string-array>
 
     <string-array name="att_lng">
@@ -179,6 +187,8 @@
         <item>120.304150</item>
         <item>120.301497</item>
         <item>120.304875</item>
+        <item>120.304308</item>
+        <item>120.301257</item>
     </string-array>
 
 </resources>
