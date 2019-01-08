@@ -7,10 +7,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import java.util.ArrayList;
 
 public class EatActivity extends AppCompatActivity {
     private static final String TAG = "EatActivity";
@@ -32,7 +28,7 @@ public class EatActivity extends AppCompatActivity {
 
     public void GoToBreakfast(View view) {
         Log.d(TAG,"go to breakfast page: is clicked...");
-        Intent intent1 = new Intent(this, GoToBreakfastActivity.class);
+        Intent intent1 = new Intent(this, BreakfastActivity.class);
         startActivity(intent1);
 
     }

@@ -116,7 +116,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".GoToBreakfastActivity"
+            android:name=".BreakfastActivity"
             android:parentActivityName=".EatActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -125,10 +125,10 @@
         >
         <activity
             android:name=".DisplayStoreActivity"
-            android:parentActivityName=".GoToBreakfastActivity">
+            android:parentActivityName=".BreakfastActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".GoToBreakfastActivity" />
+                android:value=".BreakfastActivity" />
         </activity>
         <activity android:name=".InformationActivity" />
         <activity
@@ -140,7 +140,8 @@
         <activity android:name=".LunchActivity" />
         <activity android:name=".AfternoonteaActivity" />
         <activity android:name=".DinnerActivity" />
-        <activity android:name=".MatsuActivity"></activity>
+        <activity android:name=".MatsuActivity" />
+        <activity android:name=".Information2Activity"></activity>
     </application>
 
 </manifest>

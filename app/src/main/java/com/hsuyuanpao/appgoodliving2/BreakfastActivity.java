@@ -1,7 +1,6 @@
 package com.hsuyuanpao.appgoodliving2;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -12,17 +11,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class GoToBreakfastActivity extends AppCompatActivity {
-    private static final String TAG = "GoToBreakfastActivity";
+public class BreakfastActivity extends AppCompatActivity {
+    private static final String TAG = "BreakfastActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_go_to_breakfast);
+        setContentView(R.layout.activity_breakfast);
 
         Toolbar toolbar = findViewById(R.id.toolBarBreakfast);
         TextView textView = findViewById(R.id.toolbarTitle);
@@ -93,9 +91,9 @@ public class GoToBreakfastActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView adapterView, View view, int i, long l) {    // i 早餐店編號; 1 代表早餐
                 Log.d(TAG, "onItemClick: name: " + names.get(i));
-               // Toast.makeText(GoToBreakfastActivity.this, "You clicked on: " + names.get(i), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(BreakfastActivity.this, "You clicked on: " + names.get(i), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(GoToBreakfastActivity.this, DisplayStoreActivity.class);
+                Intent intent = new Intent(BreakfastActivity.this, DisplayStoreActivity.class);
                 intent.putExtra("name", name_only.get(i).toString());
                 intent.putExtra("address", addresses.get(i).toString());
                 intent.putExtra("phone", phones.get(i).toString());
@@ -110,7 +108,7 @@ public class GoToBreakfastActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d(TAG,"back to last page: is clicked...");
-                Intent intent1 = new Intent(GoToBreakfastActivity.this, EatActivity.class);
+                Intent intent1 = new Intent(BreakfastActivity.this, EatActivity.class);
                 startActivity(intent1);
             }
         });
@@ -118,7 +116,7 @@ public class GoToBreakfastActivity extends AppCompatActivity {
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(GoToBreakfastActivity.this, MainActivity.class);
+                Intent intent2 = new Intent(BreakfastActivity.this, MainActivity.class);
                 startActivity(intent2);
             }
         });

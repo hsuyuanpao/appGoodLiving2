@@ -28,7 +28,7 @@ public class CustomListAdapter3  extends ArrayAdapter<String>{
                     R.drawable.cattlemarket, R.drawable.watertower, R.drawable.drawingcommunity,
                     R.drawable.workshop, R.drawable.wudetemple, R.drawable.bridge, R.drawable.yimintemple,
                     R.drawable.hodua, R.drawable.bookstore1_1, R.drawable.mazu_park1, R.drawable.sport_park_1,
-                    R.drawable.cultural_center};
+                    R.drawable.cultural_center, R.drawable.zhenan_temple1};
 
     static class ViewHolder{
         TextView title;

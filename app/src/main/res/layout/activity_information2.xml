@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Information2Activity"
+    android:background="@drawable/hodua5">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appbarTop">
+        <include
+            layout="@layout/toolbar_layout_top"
+            android:id="@+id/toolbarTop"
+            />
+    </android.support.design.widget.AppBarLayout>
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/expListview"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:layout_below="@+id/appbarTop"
+        android:groupIndicator="@drawable/group_indicator"
+       >
+
+    </ExpandableListView>
+
+</RelativeLayout>

@@ -20,6 +20,7 @@
         <item>https://www.instagram.com/explore/tags/%E5%AA%BD%E7%A5%96%E6%99%AF%E8%A7%80%E5%85%AC%E5%9C%92/</item>
         <item>https://www.instagram.com/explore/locations/1207037/</item>
         <item>https://www.instagram.com/explore/locations/1020052544/</item>
+        <item>https://www.instagram.com/explore/locations/631979095/-</item>
 
 
     </string-array>
@@ -41,6 +42,7 @@
         <item>https://www.facebook.com/pages/%E5%AA%BD%E7%A5%96%E6%99%AF%E8%A7%80%E5%A4%A7%E6%A8%93/247101005315924</item>
         <item>https://zh-tw.facebook.com/pages/%E5%8C%97%E6%B8%AF%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92/165208386865595</item>
         <item>https://zh-tw.facebook.com/beigang7832999/</item>
+        <item>https://zh-tw.facebook.com/sanyijing/</item>
 
     </string-array>
 
@@ -170,6 +172,7 @@
         <item>23.568485</item>
         <item>23.576660</item>
         <item>23.578636</item>
+        <item>23.566649</item>
     </string-array>
 
     <string-array name="att_lng">
@@ -189,6 +192,52 @@
         <item>120.304875</item>
         <item>120.304308</item>
         <item>120.301257</item>
+        <item>120.301789</item>
+    </string-array>
+
+    <string-array name="info_headings">
+        <item>宮廟</item>
+        <item>機關學校</item>
+        <item>交通運輸</item>
+        <item>便利商店</item>
+        <item>診所藥局</item>
+    </string-array>
+
+    <string-array name="h1_items">
+        <item>北港朝天宮</item>
+        <item>北港武德宮</item>
+    </string-array>
+
+    <string-array name="h2_items">
+        <item>北港圖書館</item>
+        <item>北港文化中心</item>
+        <item>北港建國中學</item>
+        <item>北港高中</item>
+        <item>北港國中</item>
+        <item>北港鎮公所免費停車場</item>
+        <item>北港遊客中心</item>
+    </string-array>
+
+    <string-array name="h3_items">
+        <item>台西客運北港站</item>
+        <item>統聯客運北港站</item>
+        <item>嘉義客運北港站</item>
+        <item>高鐵接駁車資訊</item>
+        <item>北港媽祖醫院免費接駁資訊</item>
+        <item>164縣道</item>
+        <item>145縣道</item>
+        <item>159縣道</item>
+    </string-array>
+
+    <string-array name="h4_items">
+        <item>全家(北港天后店)</item>
+        <item>7-11(朝天宮門市)</item>
+    </string-array>
+
+    <string-array name="h5_items">
+        <item>北港媽祖醫院</item>
+        <item>診所</item>
+        <item>藥局</item>
     </string-array>
 
 </resources>

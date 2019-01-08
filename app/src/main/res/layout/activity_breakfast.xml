@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".GoToBreakfastActivity">
+    tools:context=".BreakfastActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="50"
-        layout="@layout/activity_go_to_breakfast_core"
+        layout="@layout/activity_breakfast_core"
         android:id="@+id/imView1"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 

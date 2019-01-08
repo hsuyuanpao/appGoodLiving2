@@ -2,12 +2,10 @@ package com.hsuyuanpao.appgoodliving2;
 
 import android.content.Intent;
 import android.net.http.SslError;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.webkit.GeolocationPermissions;
 import android.webkit.SslErrorHandler;
@@ -22,7 +20,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static android.media.CamcorderProfile.get;
-import static com.hsuyuanpao.appgoodliving2.MainActivity.i;
 
 public class DisplayStoreActivity extends AppCompatActivity {
     private static final String TAG = "DispStoreActivity";
@@ -117,7 +114,7 @@ public class DisplayStoreActivity extends AppCompatActivity {
                 Log.d(TAG,"back to last page: is clicked..., and i = "+i );
                 switch(i){
                     case 1:
-                       Intent intent1 = new Intent(DisplayStoreActivity.this, GoToBreakfastActivity.class);
+                       Intent intent1 = new Intent(DisplayStoreActivity.this, BreakfastActivity.class);
                         startActivity(intent1);
                         break;
                     case 2:

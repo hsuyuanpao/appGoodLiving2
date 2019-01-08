@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayout4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {    //報馬仔
-                Intent intent9 = new Intent(MainActivity.this, InformationActivity.class);
+                Intent intent9 = new Intent(MainActivity.this, Information2Activity.class);
                 startActivity(intent9);
             }
         });
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                         menuItem.setChecked(true);
                        // displayMessage("交通資訊報馬仔");
                         drawerLayout.closeDrawers();
-                        Intent intent5 = new Intent(MainActivity.this, InformationActivity.class);
+                        Intent intent5 = new Intent(MainActivity.this, Information2Activity.class);
                         Log.d(TAG,"MapsActivity: is preparing to run...");
                         startActivity(intent5);
                         return true;
