@@ -121,7 +121,8 @@
         <item>23.573801</item>
         <item>23.577479</item>
         <item>23.565725</item>
-        <item>23.589864</item>
+
+
         <item>23.575291</item>
         <item>23.564532</item>
         <item>23.566120</item>
@@ -130,8 +131,10 @@
         <item>23.570021</item>
         <item>23.570503</item>
         <item>23.565660</item>
+
         <item>23.584448</item>
         <item>23.559690</item>
+        <item>23.589864</item>
     </string-array>
 
     <string-array name="list_lng">
@@ -142,7 +145,8 @@
         <item>120.295431</item>
         <item>120.304441</item>
         <item>120.299206</item>
-        <item>120.307384</item>
+
+
         <item>120.300598</item>
         <item>120.305663</item>
         <item>120.304465</item>
@@ -151,8 +155,10 @@
         <item>120.300626</item>
         <item>120.302131</item>
         <item>120.298692</item>
+
         <item>120.300637</item>
         <item>120.301683</item>
+        <item>120.307384</item>
     </string-array>
 
     <string-array name="att_lat">
@@ -198,8 +204,8 @@
     <string-array name="info_headings">
         <item>宮廟</item>
         <item>機關學校</item>
-        <item>交通運輸</item>
         <item>便利商店</item>
+        <item>交通運輸</item>
         <item>診所藥局</item>
     </string-array>
 
@@ -219,19 +225,19 @@
     </string-array>
 
     <string-array name="h3_items">
-        <item>台西客運北港站</item>
-        <item>統聯客運北港站</item>
-        <item>嘉義客運北港站</item>
-        <item>高鐵接駁車資訊</item>
-        <item>北港媽祖醫院免費接駁資訊</item>
-        <item>164縣道</item>
-        <item>145縣道</item>
-        <item>159縣道</item>
+        <item>全家(北港天后店)</item>
+        <item>7-11(朝天宮門市)</item>
     </string-array>
 
     <string-array name="h4_items">
-        <item>全家(北港天后店)</item>
-        <item>7-11(朝天宮門市)</item>
+        <item>台西客運北港站</item>
+        <item>統聯客運北港站</item>
+        <item>嘉義客運北港站</item>
+        <item>164縣道</item>
+        <item>145縣道</item>
+        <item>159縣道</item>
+        <item>高鐵接駁車資訊</item>
+        <item>北港媽祖醫院免費接駁資訊</item>
     </string-array>
 
     <string-array name="h5_items">

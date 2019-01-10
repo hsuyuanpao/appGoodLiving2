@@ -29,7 +29,7 @@ public class DisplayInformation2Activity extends AppCompatActivity {
         tvaddress.setText("地址: " + address);
         tvphone.setText("電話: " + phone);
         int no = getIntent().getIntExtra("no",0);
-        if(no == 18){
+        if(no == 17){
             iv.setImageResource(R.drawable.hst_schedule1);
         }
         else {
@@ -38,7 +38,7 @@ public class DisplayInformation2Activity extends AppCompatActivity {
     }
 
     public void LastPage(View view){
-        Intent intent = new Intent(this, InformationActivity.class);
+        Intent intent = new Intent(this, Information2Activity.class);
         startActivity(intent);
     }
 

@@ -141,7 +141,8 @@
         <activity android:name=".AfternoonteaActivity" />
         <activity android:name=".DinnerActivity" />
         <activity android:name=".MatsuActivity" />
-        <activity android:name=".Information2Activity"></activity>
+        <activity android:name=".Information2Activity" />
+        <activity android:name=".Information2Webpage"></activity>
     </application>
 
 </manifest>

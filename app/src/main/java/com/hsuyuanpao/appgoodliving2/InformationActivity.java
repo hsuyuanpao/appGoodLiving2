@@ -124,7 +124,7 @@ public class InformationActivity extends AppCompatActivity {
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {// i 早餐店編號; 1 代表早餐
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {// i 編號
                 //Log.d(TAG, "onItemClick: name: " + names.get(i));
                 //Toast.makeText(InformationActivity.this, "You clicked on: " + name_only.get(i), Toast.LENGTH_SHORT).show();
                 if (i == 18 || i == 19) {

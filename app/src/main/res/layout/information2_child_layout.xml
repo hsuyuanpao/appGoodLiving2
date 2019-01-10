@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#197206">
+    android:background="#ed6f07">
 
     <TextView
         android:id="@+id/child_item"
@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
         android:text="children"
-        android:textColor="#ffffff"
+        android:textColor="#412402"
         android:textSize="25sp"
         android:gravity="center_vertical"
 />

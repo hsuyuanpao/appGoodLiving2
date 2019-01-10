@@ -74,17 +74,17 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
         TextView textView = findViewById(R.id.toolbarTitle);
         ImageView imageView1 = findViewById(R.id.imviewTop1);
         ImageView imageView2 = findViewById(R.id.imviewTop2);
-      //  TextView tvaddress = findViewById(R.id.tv1);
-      //  TextView tvphone = findViewById(R.id.tv2);
+        TextView tvaddress = findViewById(R.id.tv1);
+        TextView tvphone = findViewById(R.id.tv2);
 
         String name = getIntent().getStringExtra("name");
-      //  String address = getIntent().getStringExtra("address");
-      //  String phone = getIntent().getStringExtra("phone");
+        String address = getIntent().getStringExtra("address");
+        String phone = getIntent().getStringExtra("phone");
         int no = getIntent().getIntExtra("no", 0);   // get location no.
         //Toast.makeText(this, "Information of no: " + no, Toast.LENGTH_SHORT).show();
         textView.setText(name);
-   /*     tvaddress.setText("地址: " + address);
-        tvphone.setText("電話: " + phone);*/
+        tvaddress.setText("地址: " + address);
+        tvphone.setText("電話: " + phone);
         if(haveInternet()) {
             if (chkPlayService()) {
                 initMap();
@@ -126,7 +126,7 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(DisplayInformationActivity.this, InformationActivity.class);
+                Intent intent1 = new Intent(DisplayInformationActivity.this, Information2Activity.class);
                 startActivity(intent1);
             }
         });
