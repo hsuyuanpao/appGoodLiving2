@@ -69,7 +69,7 @@ public class MatsuActivity extends AppCompatActivity {
 
         Log.d(TAG,"onCreate: preparing to open Matsu website...");
 
-        String url = "http://www.ydm.com.tw/dl/";
+        String url = "http://www.matsu.org.tw/index2.aspx";
 
 
         mWebView.loadUrl(url);

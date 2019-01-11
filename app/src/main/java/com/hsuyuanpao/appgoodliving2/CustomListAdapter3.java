@@ -70,21 +70,21 @@ public class CustomListAdapter3  extends ArrayAdapter<String>{
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG,"onClick: try to send image..."+ position);
+                //Log.d(TAG,"onClick: try to send image..."+ position);
                 // Toast.makeText(context, cd.getTitle(), Toast.LENGTH_SHORT).show();
-                if(position == 0){
+               /* if(position == 0){
                     Intent intent1 = new Intent(context, MatsuActivity.class);
                     intent1.putExtra("image_title", list_title.get(position));
                     context.startActivity(intent1);
                 }
-                else {
+                else {*/
                     Intent intent = new Intent(context, DisplayActivity.class);
                     intent.putExtra("image_title", list_title.get(position));
                     intent.putExtra("image_description", list_description.get(position));
                     intent.putExtra("image", position);
 
                     context.startActivity(intent);
-                }
+              //  }
             }
         });
 
