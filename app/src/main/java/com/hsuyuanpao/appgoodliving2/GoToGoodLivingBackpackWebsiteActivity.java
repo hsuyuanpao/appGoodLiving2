@@ -1,8 +1,10 @@
 package com.hsuyuanpao.appgoodliving2;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.http.SslError;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -48,10 +50,23 @@ public class GoToGoodLivingBackpackWebsiteActivity extends AppCompatActivity {
         {
 
             @Override
-            public void onReceivedSslError(WebView view, SslErrorHandler
-                    handler, SslError error)
-            {
-                handler.proceed();
+            public void onReceivedSslError(WebView view, final SslErrorHandler handler, SslError error) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(GoToGoodLivingBackpackWebsiteActivity.this);
+                //builder.setMessage(R.string.notification_error_ssl_cert_invalid);
+                builder.setPositiveButton("continue", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        handler.proceed();
+                    }
+                });
+                builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        handler.cancel();
+                    }
+                });
+                final AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
         mWebView.setWebChromeClient(new WebChromeClient()

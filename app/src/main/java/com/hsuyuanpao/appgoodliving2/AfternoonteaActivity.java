@@ -45,7 +45,7 @@ public class AfternoonteaActivity extends AppCompatActivity {
         names.add("7.　　　　木瓜田　　　　>>");
         names.add("8.　　-陳氏姊妹果汁-　　>>");
         names.add("9.　　　-天后咖啡-　　　>>");
-        names.add("10.　　-光明書屋店-　　>>");
+        names.add("10.　　-光明屋書店-　　>>");
 
 
         addresses.add("地址: 651雲林縣北港鎮光明路20號");
@@ -79,7 +79,7 @@ public class AfternoonteaActivity extends AppCompatActivity {
         name_only.add("木瓜田");
         name_only.add("陳氏姊妹果汁");
         name_only.add("天后咖啡");
-        name_only.add("光明書屋店");
+        name_only.add("光明屋書店");
 
 
         ArrayAdapter adapter = new ArrayAdapter(this, R.layout.list_afternoontea_layout, names);
