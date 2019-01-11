@@ -69,8 +69,9 @@ public class GoodLivingFBActivity extends AppCompatActivity {
         imTop1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(GoodLivingFBActivity.this, GoToGoodLivingActivity.class);
-                startActivity(intent1);
+                //Intent intent1 = new Intent(GoodLivingFBActivity.this, GoToGoodLivingActivity.class);
+                //startActivity(intent1);
+                finish();
             }
         });
 

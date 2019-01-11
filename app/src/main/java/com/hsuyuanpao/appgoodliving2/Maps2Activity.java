@@ -68,9 +68,9 @@ public class Maps2Activity extends FragmentActivity implements OnMapReadyCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_information);
+        setContentView(R.layout.activity_maps2);
 
-        Toolbar toolbar = findViewById(R.id.toolBar7);
+        Toolbar toolbar = findViewById(R.id.toolBarMaps2);
         TextView textView = findViewById(R.id.toolbarTitle);
         ImageView imageView1 = findViewById(R.id.imviewTop1);
         ImageView imageView2 = findViewById(R.id.imviewTop2);
@@ -120,8 +120,9 @@ public class Maps2Activity extends FragmentActivity implements OnMapReadyCallbac
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(Maps2Activity.this, DisplayActivity.class);
-                startActivity(intent1);
+                //Intent intent1 = new Intent(Maps2Activity.this, DisplayActivity.class);
+                //startActivity(intent1);
+                finish();
             }
         });
 

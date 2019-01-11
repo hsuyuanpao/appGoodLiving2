@@ -83,8 +83,9 @@ public class IGActivity extends AppCompatActivity {
         imTop1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(IGActivity.this, DisplayActivity.class);
-                startActivity(intent1);
+                //Intent intent1 = new Intent(IGActivity.this, DisplayActivity.class);
+                //startActivity(intent1);
+                finish();
             }
         });
 

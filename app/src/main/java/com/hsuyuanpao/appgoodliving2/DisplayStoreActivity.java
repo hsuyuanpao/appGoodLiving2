@@ -91,18 +91,21 @@ public class DisplayStoreActivity extends AppCompatActivity {
                 url = list.get(getIntent().getIntExtra("store_no", 0));
                 mWebView.loadUrl(url);
                 lastpage_or_home(i);
+
                 break;
             case 3: //afternoon tea
                 list = Arrays.asList(getResources().getStringArray(R.array.afternoontea_store_url));
                 url = list.get(getIntent().getIntExtra("store_no", 0));
                 mWebView.loadUrl(url);
                 lastpage_or_home(i);
+
                 break;
             case 4: //dinner
                 list = Arrays.asList(getResources().getStringArray(R.array.dinner_store_url));
                 url = list.get(getIntent().getIntExtra("store_no", 0));
                 mWebView.loadUrl(url);
                 lastpage_or_home(i);
+
                 break;
         }
     }
@@ -111,11 +114,12 @@ public class DisplayStoreActivity extends AppCompatActivity {
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG,"back to last page: is clicked..., and i = "+i );
+                /*Log.d(TAG,"back to last page: is clicked..., and i = "+i );
                 switch(i){
                     case 1:
-                       Intent intent1 = new Intent(DisplayStoreActivity.this, BreakfastActivity.class);
-                        startActivity(intent1);
+                       //Intent intent1 = new Intent(DisplayStoreActivity.this, BreakfastActivity.class);
+                        //startActivity(intent1);
+                        finish();
                         break;
                     case 2:
                         Intent intent2 = new Intent(DisplayStoreActivity.this, LunchActivity.class);
@@ -129,7 +133,8 @@ public class DisplayStoreActivity extends AppCompatActivity {
                         Intent intent4 = new Intent(DisplayStoreActivity.this, DinnerActivity.class);
                         startActivity(intent4);
                         break;
-                }
+                }*/
+                finish();
             }
         });
 

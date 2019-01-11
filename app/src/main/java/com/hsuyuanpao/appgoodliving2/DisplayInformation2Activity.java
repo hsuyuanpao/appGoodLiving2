@@ -38,8 +38,9 @@ public class DisplayInformation2Activity extends AppCompatActivity {
     }
 
     public void LastPage(View view){
-        Intent intent = new Intent(this, Information2Activity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, Information2Activity.class);
+        //startActivity(intent);
+        finish();
     }
 
     public void HomePage(View view){

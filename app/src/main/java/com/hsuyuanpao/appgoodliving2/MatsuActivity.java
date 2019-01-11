@@ -77,8 +77,9 @@ public class MatsuActivity extends AppCompatActivity {
         imTop1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(MatsuActivity.this, AttrcationsNearByCVActivity.class);
-                startActivity(intent1);
+                //Intent intent1 = new Intent(MatsuActivity.this, AttrcationsNearByCVActivity.class);
+                //startActivity(intent1);
+                finish();
             }
         });
 

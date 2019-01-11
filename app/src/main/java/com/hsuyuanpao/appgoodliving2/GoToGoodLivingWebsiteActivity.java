@@ -69,8 +69,9 @@ public class GoToGoodLivingWebsiteActivity extends AppCompatActivity {
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(GoToGoodLivingWebsiteActivity.this, GoToGoodLivingActivity.class);
-                startActivity(intent1);
+                //Intent intent1 = new Intent(GoToGoodLivingWebsiteActivity.this, GoToGoodLivingActivity.class);
+                //startActivity(intent1);
+                finish();
             }
         });
 

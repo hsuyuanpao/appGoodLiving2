@@ -303,8 +303,9 @@ public class Information2Activity extends AppCompatActivity {
     }
 
     public void LastPage(View view){
-        Intent intent3 = new Intent(this, MainActivity.class);
-        startActivity(intent3);
+        //Intent intent3 = new Intent(this, MainActivity.class);
+        //startActivity(intent3);
+        finish();
     }
 
     public void HomePage(View view){

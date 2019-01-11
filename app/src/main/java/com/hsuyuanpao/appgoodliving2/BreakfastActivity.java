@@ -107,9 +107,10 @@ public class BreakfastActivity extends AppCompatActivity {
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG,"back to last page: is clicked...");
-                Intent intent1 = new Intent(BreakfastActivity.this, EatActivity.class);
-                startActivity(intent1);
+                //Log.d(TAG,"back to last page: is clicked...");
+                //Intent intent1 = new Intent(BreakfastActivity.this, EatActivity.class);
+                //startActivity(intent1);
+                finish();
             }
         });
 

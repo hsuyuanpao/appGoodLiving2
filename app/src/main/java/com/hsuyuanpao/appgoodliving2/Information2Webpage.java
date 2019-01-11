@@ -83,8 +83,9 @@ public class Information2Webpage extends AppCompatActivity {
         imTop1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(Information2Webpage.this, Information2Activity.class);
-                startActivity(intent1);
+                //Intent intent1 = new Intent(Information2Webpage.this, Information2Activity.class);
+                //startActivity(intent1);
+                finish();
             }
         });
 
