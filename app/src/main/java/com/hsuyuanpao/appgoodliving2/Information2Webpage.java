@@ -52,7 +52,8 @@ public class Information2Webpage extends AppCompatActivity {
 
             @Override
             public void onReceivedSslError(WebView view, final SslErrorHandler handler, SslError error) {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(Information2Webpage.this);
+                handler.cancel();
+                /*final AlertDialog.Builder builder = new AlertDialog.Builder(Information2Webpage.this);
                 //builder.setMessage(R.string.notification_error_ssl_cert_invalid);
                 builder.setPositiveButton("continue", new DialogInterface.OnClickListener() {
                     @Override
@@ -67,7 +68,7 @@ public class Information2Webpage extends AppCompatActivity {
                     }
                 });
                 final AlertDialog dialog = builder.create();
-                dialog.show();
+                dialog.show();*/
             }
         });
         //mWebView.loadUrl("https://192.168.2.29/ccc/");

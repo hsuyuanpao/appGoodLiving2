@@ -53,8 +53,9 @@ public class FBActivity extends AppCompatActivity {
 
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-                final SslErrorHandler mHandler ;
-                mHandler= handler;
+                //final SslErrorHandler mHandler ;
+                handler.cancel();
+               /* mHandler= handler;
                 AlertDialog.Builder builder = new AlertDialog.Builder(FBActivity.this);
                 builder.setMessage("ssl證書驗證失敗");
                 builder.setPositiveButton("繼續", new DialogInterface.OnClickListener() {
@@ -81,7 +82,7 @@ public class FBActivity extends AppCompatActivity {
                     }
                 });
                 AlertDialog dialog = builder.create();
-                dialog.show();
+                dialog.show();*/
             }
         });
         //mWebView.loadUrl("https://192.168.2.29/ccc/");

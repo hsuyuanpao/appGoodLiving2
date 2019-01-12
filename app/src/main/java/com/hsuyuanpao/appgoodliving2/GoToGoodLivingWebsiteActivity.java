@@ -52,7 +52,8 @@ public class GoToGoodLivingWebsiteActivity extends AppCompatActivity {
 
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-                final SslErrorHandler mHandler ;
+                handler.cancel();
+                /*final SslErrorHandler mHandler ;
                 mHandler= handler;
                 AlertDialog.Builder builder = new AlertDialog.Builder(GoToGoodLivingWebsiteActivity.this);
                 builder.setMessage("ssl證書驗證失敗");
@@ -80,7 +81,7 @@ public class GoToGoodLivingWebsiteActivity extends AppCompatActivity {
                     }
                 });
                 AlertDialog dialog = builder.create();
-                dialog.show();
+                dialog.show();*/
             }
         });
         mWebView.setWebChromeClient(new WebChromeClient()
