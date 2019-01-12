@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.GeolocationPermissions;
 import android.webkit.SslErrorHandler;
@@ -66,25 +67,38 @@ public class DisplayStoreActivity extends AppCompatActivity {
         mWebView.setWebViewClient(new WebViewClient() {
 
             @Override
-            public void onReceivedSslError(WebView view, final SslErrorHandler handler, SslError error) {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(DisplayStoreActivity.this);
-                //builder.setMessage(R.string.notification_error_ssl_cert_invalid);
-                builder.setPositiveButton("continue", new DialogInterface.OnClickListener() {
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                final SslErrorHandler mHandler ;
+                mHandler= handler;
+                AlertDialog.Builder builder = new AlertDialog.Builder(DisplayStoreActivity.this);
+                builder.setMessage("ssl證書驗證失敗");
+                builder.setPositiveButton("繼續", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        handler.proceed();
+                        mHandler.proceed();
                     }
                 });
-                builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        handler.cancel();
+                        mHandler.cancel();
                     }
                 });
-                final AlertDialog dialog = builder.create();
+                builder.setOnKeyListener(new DialogInterface.OnKeyListener() {
+                    @Override
+                    public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                        if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                            mHandler.cancel();
+                            dialog.dismiss();
+                            return true;
+                        }
+                        return false;
+                    }
+                });
+                AlertDialog dialog = builder.create();
                 dialog.show();
             }
-        });
+    });
 
         mWebView.setWebChromeClient(new WebChromeClient() {
             @Override

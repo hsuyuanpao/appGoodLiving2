@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hsuyuanpao.appgoodliving2">
-
+<!--
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.camera2" />
     <uses-feature android:name="android.hardware.camera2.focus" />
-
+-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -79,7 +79,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".Maps2Activity"
             android:label="@string/title_activity_maps"
             android:parentActivityName=".DisplayActivity">
             <meta-data
@@ -130,18 +130,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".BreakfastActivity" />
         </activity>
-        <activity android:name=".InformationActivity" />
+        <activity android:name=".Information2Activity" />
         <activity
             android:name=".DisplayInformationActivity"
             android:label="@string/title_activity_display_information" />
         <activity android:name=".DisplayInformation2Activity" />
-        <activity android:name=".Maps2Activity" />
+
         <activity android:name=".GoodLivingFBActivity" />
         <activity android:name=".LunchActivity" />
         <activity android:name=".AfternoonteaActivity" />
         <activity android:name=".DinnerActivity" />
         <activity android:name=".MatsuActivity" />
-        <activity android:name=".Information2Activity" />
+
         <activity android:name=".Information2Webpage"></activity>
     </application>
 

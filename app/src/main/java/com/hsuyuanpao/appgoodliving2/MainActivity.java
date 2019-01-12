@@ -122,13 +122,13 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent2 = new Intent(MainActivity.this,GoToGoodLivingActivity.class);
                         startActivity(intent2);
                         return true;
-                    case R.id.nav_qrcode:
+                 /*   case R.id.nav_qrcode:
                         menuItem.setChecked(true);
                         //displayMessage("qrcode掃描");
                         drawerLayout.closeDrawers();
                         Intent intent3 = new Intent(MainActivity.this, QRCodeScanActivity.class);
                         startActivity(intent3);
-                        return true;
+                        return true;*/
                     case R.id.nav_recommendation:
                         menuItem.setChecked(true);
                        //displayMessage("吃吃喝喝推薦");
