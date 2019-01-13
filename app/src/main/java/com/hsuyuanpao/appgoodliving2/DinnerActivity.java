@@ -36,22 +36,22 @@ public class DinnerActivity extends AppCompatActivity {
         final ArrayList phones = new ArrayList();
         final ArrayList name_only = new ArrayList();
 
-        names.add("1.　　　九久醇義麵坊　　　>>");
-        names.add("2.　　　-加運包子店-　　　>>");
-        names.add("3.　　　田仔羊肉米糕　　　>>");
-        names.add("4.　　　-阿扁麻醬麵-　　　>>");
-        names.add("5.　　　一郎土魠魚羹　　　>>");
-        names.add("6.　　　-北港一尾魚-　　　>>");
-        names.add("7.　　　-圓環滷肉飯-　　　>>");
-        names.add("8.　　　　圓環滷味　　　　>>");
-        names.add("9.　北港新味珍原汁牛肉麵　>>");
-        names.add("10.　　-阿敏蟳羹豬腳-　　>>");
-        names.add("11.　　-阿不倒排骨飯-　　>>");
-        names.add("12.　　-秋月生炒鱔魚-　　>>");
-        names.add("13.　　　-瘦仔麵攤-　　　>>");
-        names.add("14.　　-北港清粥小菜-　　>>");
-        names.add("15.　　　-青松餐廳-　　　>>");
-        names.add("16.　　　-吉輝餐廳-　　　>>");
+        names.add("1.　九久醇義麵坊　　　>>");
+        names.add("2.　加運包子店　　　　>>");
+        names.add("3.　田仔羊肉米糕　　　>>");
+        names.add("4.　阿扁麻醬麵　　　　>>");
+        names.add("5.　郎土魠魚羹　　　　>>");
+        names.add("6.　北港一尾魚　　　　>>");
+        names.add("7.　圓環滷肉飯　　　　>>");
+        names.add("8.　圓環滷味　　　　　>>");
+        names.add("9.　新味珍原汁牛肉麵　>>");
+        names.add("10．阿敏蟳羹豬腳　　　>>");
+        names.add("11．阿不倒排骨飯　　　>>");
+        names.add("12．秋月生炒鱔魚　　　>>");
+        names.add("13．瘦仔麵攤　　　　　>>");
+        names.add("14．北港清粥小菜　　　>>");
+        names.add("15．青松餐廳　　　　　>>");
+        names.add("16．吉輝餐廳　　　　　>>");
 
         addresses.add("地址: 651雲林縣北港鎮公民路37號");
         addresses.add("地址: 651雲林縣北港鎮光明路20號");

@@ -1,6 +1,8 @@
 package com.hsuyuanpao.appgoodliving2;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,15 +10,18 @@ import android.support.v7.widget.Toolbar;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DisplayActivity extends AppCompatActivity {
+public class DisplayActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "DisplayActivity";
     private int[] images = {R.drawable.temple, R.drawable.oldstreet, R.drawable.daughterbridge,
             R.drawable.cattlemarket, R.drawable.watertower, R.drawable.drawingcommunity,
@@ -27,11 +32,19 @@ public class DisplayActivity extends AppCompatActivity {
                         R.drawable.workshop_map, R.drawable.wudetemple_map, R.drawable.bridge_map, R.drawable.yimintemple_map,
                         R.drawable.hodua_map_1, R.drawable.bookstore_map_1, R.drawable.mazu_park_map_1, R.drawable.sport_park_map_1,
                         R.drawable.cultural_center_map_1, R.drawable.cultural_center_map_1};
+    private int[] sounds = {R.raw.sound1, R.raw.sound2, R.raw.sound3, R.raw.sound4, R.raw.sound5, R.raw.sound6, R.raw.sound7,
+                            R.raw.sound8, R.raw.s9, R.raw.s10, R.raw.s11, R.raw.s12, R.raw.s13, R.raw.s14,
+                            R.raw.s15, R.raw.s16};
 
     ImageView imageView;
     ImageView imageView2;
     TextView  textView;
     TextView  textView2;
+    Button      playBtn;
+    SeekBar     seekBar;
+    MediaPlayer mediaPlayer;
+    Runnable    runnable;
+    Handler     handler;
 
     private List<String> listIG;
     private List<String> listFB;
@@ -53,19 +66,23 @@ public class DisplayActivity extends AppCompatActivity {
         String title = getIntent().getStringExtra("image_title");
         if(title != null){//判斷是返回，還是新點選的景點。如果是返回則title和desc會是空的!
             r_title = title;
-            i = getIntent().getIntExtra("image",0);
+
             desc = getIntent().getStringExtra("image_description");
         }
         //Toast.makeText(this, "title = "+r_title, Toast.LENGTH_SHORT).show();;
+        i = getIntent().getIntExtra("image",0);
         tvTitle.setText(r_title);   // set toolbar Title
 
         imageView = findViewById(R.id.imageDisplay);
         imageView2 = findViewById(R.id.imageDisplay2);
         textView = findViewById(R.id.textTitle);
         textView2 = findViewById(R.id.textDesc);
-     /*   ivlogo1 = findViewById(R.id.maplogo);
-        ivlogo2 = findViewById(R.id.iglogo);
-        ivlogo3 = findViewById(R.id.fblogo);*/
+
+        playBtn = findViewById(R.id.playBtn);
+        handler = new Handler();
+        seekBar = findViewById(R.id.seekBar);
+
+        mediaPlayer = MediaPlayer.create(this, sounds[i]);
 
         listIG = Arrays.asList(getResources().getStringArray(R.array.attraction_igurl));
         listFB = Arrays.asList(getResources().getStringArray(R.array.attraction_fburl));
@@ -89,8 +106,11 @@ public class DisplayActivity extends AppCompatActivity {
         imTop1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent1 = new Intent(DisplayActivity.this, AttrcationsNearByCVActivity.class);
-                //startActivity(intent1);
+                if(mediaPlayer.isPlaying())
+                    mediaPlayer.stop();
+                handler.removeCallbacksAndMessages(null);
+                //mediaPlayer.release();
+                //mediaPlayer = null;
                 finish();
             }
         });
@@ -98,11 +118,69 @@ public class DisplayActivity extends AppCompatActivity {
         imTop2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(mediaPlayer.isPlaying())
+                    mediaPlayer.stop();
+                handler.removeCallbacksAndMessages(null);
+                //mediaPlayer.release();
+                //mediaPlayer = null;
                 Intent intent2 = new Intent(DisplayActivity.this, MainActivity.class);
                 startActivity(intent2);
             }
         });
 
+        playBtn.setOnClickListener(this);
+
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                seekBar.setMax(mediaPlayer.getDuration());
+               //mediaPlayer.start();
+                changeSeekbar();
+            }
+        });
+
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                playBtn.setText("播放語音");
+                handler.removeCallbacksAndMessages(null);
+                seekBar.setProgress(0);
+                //Toast.makeText(DisplayActivity.this, "MediaPlayer stopped", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                if(b){
+                    mediaPlayer.seekTo(i);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+    }
+
+    private void changeSeekbar() {
+        seekBar.setProgress(mediaPlayer.getCurrentPosition());
+        if(mediaPlayer.isPlaying()){
+            runnable = new Runnable() {
+                @Override
+                public void run() {
+                    changeSeekbar();
+                }
+            };
+            handler.postDelayed(runnable,1000);//一秒執行一次run()
+        }
     }
 
     public void GoToMapsActivity(View view) {
@@ -127,6 +205,21 @@ public class DisplayActivity extends AppCompatActivity {
         intent.putExtra("urlString",fburl);
         intent.putExtra("title",r_title);
         startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(mediaPlayer.isPlaying()){
+            mediaPlayer.pause();
+            playBtn.setText("播放語音");
+            //Toast.makeText(this, "MediaPlayer paused", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            mediaPlayer.start();
+            playBtn.setText("暫停播放");
+            changeSeekbar();
+            //Toast.makeText(this, "MediaPlayer playing", Toast.LENGTH_SHORT).show();
+        }
     }
 }
 

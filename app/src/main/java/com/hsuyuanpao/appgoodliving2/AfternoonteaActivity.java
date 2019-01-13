@@ -36,16 +36,16 @@ public class AfternoonteaActivity extends AppCompatActivity {
         final ArrayList phones = new ArrayList();
         final ArrayList name_only = new ArrayList();
 
-        names.add("1.　　　加運包子店　　　>>");
-        names.add("2.　　-金牛古味刨冰-　　>>");
-        names.add("3.　　　北港圓仔湯　　　>>");
-        names.add("4.　　-秀山杏仁豆腐-　　>>");
-        names.add("5.　北港秋田古早味果汁　>>");
-        names.add("6.　　　粳粽林粽冰　　　>>");
-        names.add("7.　　　　木瓜田　　　　>>");
-        names.add("8.　　-陳氏姊妹果汁-　　>>");
-        names.add("9.　　　-天后咖啡-　　　>>");
-        names.add("10.　　-光明屋書店-　　>>");
+        names.add("1.　加運包子店　　　>>");
+        names.add("2.　金牛古味刨冰　　>>");
+        names.add("3.　北港圓仔湯　　　>>");
+        names.add("4.　秀山杏仁豆腐　　>>");
+        names.add("5.　秋田古早味果汁　>>");
+        names.add("6.　粳粽林粽冰　　　>>");
+        names.add("7.　木瓜田　　　　　>>");
+        names.add("8.　陳氏姊妹果汁　　>>");
+        names.add("9.　天后咖啡　　　　>>");
+        names.add("10．光明屋書店　　　>>");
 
 
         addresses.add("地址: 651雲林縣北港鎮光明路20號");
