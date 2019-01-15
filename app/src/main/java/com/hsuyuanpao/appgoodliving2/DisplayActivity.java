@@ -49,6 +49,7 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
     private List<String> listIG;
     private List<String> listFB;
     private static int i;
+    private static int f = 0;
     private String igurl, fburl;
     private static String r_title;
     private static String desc;
@@ -142,9 +143,16 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
-                playBtn.setText("播放語音");
+
                 handler.removeCallbacksAndMessages(null);
+                playBtn.setText("播放語音");
+                if(mediaPlayer.isPlaying()) {
+                    mediaPlayer.stop();
+                    seekBar.setProgress(mediaPlayer.getCurrentPosition());
+                }
+                //changeSeekbar();
                 seekBar.setProgress(0);
+                Log.d(TAG,"onCompletionListener is running...");
                 //Toast.makeText(DisplayActivity.this, "MediaPlayer stopped", Toast.LENGTH_SHORT).show();
             }
         });
@@ -171,7 +179,11 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void changeSeekbar() {
-        seekBar.setProgress(mediaPlayer.getCurrentPosition());
+        if(mediaPlayer.getDuration() == mediaPlayer.getCurrentPosition())
+            seekBar.setProgress(0);
+        else
+            seekBar.setProgress(mediaPlayer.getCurrentPosition());
+        Log.d(TAG,"changeSeekbar is running");
         if(mediaPlayer.isPlaying()){
             runnable = new Runnable() {
                 @Override
@@ -179,7 +191,7 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
                     changeSeekbar();
                 }
             };
-            handler.postDelayed(runnable,1000);//一秒執行一次run()
+            handler.postDelayed(runnable,200);//一秒執行一次run()
         }
     }
 
@@ -211,13 +223,16 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         if(mediaPlayer.isPlaying()){
             mediaPlayer.pause();
+            handler.removeCallbacksAndMessages(null);
             playBtn.setText("播放語音");
+            Log.d(TAG,"mediaPlayer is paused");
             //Toast.makeText(this, "MediaPlayer paused", Toast.LENGTH_SHORT).show();
         }
         else {
             mediaPlayer.start();
             playBtn.setText("暫停播放");
             changeSeekbar();
+            Log.d(TAG,"mediaPlayer is starting");
             //Toast.makeText(this, "MediaPlayer playing", Toast.LENGTH_SHORT).show();
         }
     }

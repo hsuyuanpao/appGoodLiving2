@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <include
-            layout="@layout/toolbar_layout"
-            android:id="@+id/toolBar2"
+            layout="@layout/toolbar_layout_top"
+            android:id="@+id/toolbarAttractions"
             />
     </android.support.design.widget.AppBarLayout>
 

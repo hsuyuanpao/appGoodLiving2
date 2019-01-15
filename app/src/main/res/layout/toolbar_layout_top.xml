@@ -28,7 +28,7 @@
             android:layout_weight="10"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:src="@drawable/ic_back"
+            android:src="@drawable/arrow_left_white_28x28"
             android:id="@+id/imviewTop1"
             android:onClick="LastPage"/>
 
@@ -48,7 +48,7 @@
             android:layout_weight="15"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:src="@drawable/ic_home"
+            android:src="@drawable/home_icon_white_28x28"
             android:id="@+id/imviewTop2"
             android:onClick="HomePage"/>
 

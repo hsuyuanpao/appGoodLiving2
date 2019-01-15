@@ -34,7 +34,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AttrcationsNearByCVActivity" />
         </activity>
+<!--
         <activity android:name=".QRCodeScanActivity" />
+-->
         <activity
             android:name=".GoToGoodLivingActivity"
             android:parentActivityName=".MainActivity">
@@ -122,7 +124,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".EatActivity" />
         </activity>
-        >
+
         <activity
             android:name=".DisplayStoreActivity"
             android:parentActivityName=".BreakfastActivity">
@@ -140,8 +142,9 @@
         <activity android:name=".LunchActivity" />
         <activity android:name=".AfternoonteaActivity" />
         <activity android:name=".DinnerActivity" />
+<!--
         <activity android:name=".MatsuActivity" />
-
+-->
         <activity android:name=".Information2Webpage"></activity>
     </application>
 

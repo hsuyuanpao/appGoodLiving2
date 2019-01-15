@@ -1,10 +1,14 @@
 package com.hsuyuanpao.appgoodliving2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -21,13 +25,13 @@ public class AttrcationsNearByCVActivity extends AppCompatActivity{
         setContentView(R.layout.listview_layout);
         mListView =  findViewById(R.id.listView);
 
-        Toolbar toolbar = findViewById(R.id.toolBar2);
-        setSupportActionBar(toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbarAttractions);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("          週邊景點介紹");
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_back);
+        TextView tvTitle = findViewById(R.id.toolbarTitle);
+        ImageView imTop1 = findViewById(R.id.imviewTop1);
+        ImageView imTop2 = findViewById(R.id.imviewTop2);
+
+        tvTitle.setText("景點介紹");
 
         ArrayList image_title = new ArrayList<>();
         ArrayList image_description = new ArrayList<>();
@@ -70,6 +74,21 @@ public class AttrcationsNearByCVActivity extends AppCompatActivity{
 
         adapter = new CustomListAdapter3(AttrcationsNearByCVActivity.this, image_title, image_description);
         mListView.setAdapter(adapter);
+
+        imTop1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        imTop2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(AttrcationsNearByCVActivity.this, MainActivity.class);
+                startActivity(intent2);
+            }
+        });
 
     }
 }
