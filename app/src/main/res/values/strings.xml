@@ -21,6 +21,7 @@
         <item>https://www.instagram.com/explore/locations/1207037/</item>
         <item>https://www.instagram.com/explore/locations/1020052544/</item>
         <item>https://www.instagram.com/explore/locations/631979095/-</item>
+        <item>https://www.imgrumweb.com/hashtag/%E5%8C%97%E6%B8%AF%E5%A5%BD%E4%BD%8F%E8%83%8C%E5%8C%85%E5%AE%A2%E6%A3%A7</item>
 
 
     </string-array>
@@ -43,6 +44,7 @@
         <item>https://zh-tw.facebook.com/pages/%E5%8C%97%E6%B8%AF%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92/165208386865595</item>
         <item>https://zh-tw.facebook.com/beigang7832999/</item>
         <item>https://zh-tw.facebook.com/sanyijing/</item>
+        <item>https://zh-tw.facebook.com/057832665.Houda.Hostel/</item>
 
     </string-array>
 
@@ -179,6 +181,8 @@
         <item>23.576660</item>
         <item>23.578636</item>
         <item>23.566649</item>
+
+        <item>23.566276</item>
     </string-array>
 
     <string-array name="att_lng">
@@ -199,6 +203,8 @@
         <item>120.304308</item>
         <item>120.301257</item>
         <item>120.301789</item>
+
+        <item>120.304766</item>
     </string-array>
 
     <string-array name="info_headings">

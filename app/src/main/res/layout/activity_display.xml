@@ -27,21 +27,18 @@
         android:paddingLeft="3dp"
         android:paddingRight="3dp"
         android:id="@+id/player">
-        <Button
+        <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="28"
-            android:text="播放語音"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textSize="14sp"
+            android:layout_weight="10"
+            android:src="@drawable/play_1"
             android:id="@+id/playBtn"/>
         <SeekBar
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="76"
+            android:layout_weight="90"
 
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="1dp"
             android:id="@+id/seekBar"/>
     </LinearLayout>
 

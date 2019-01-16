@@ -26,21 +26,22 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
     private int[] images = {R.drawable.temple, R.drawable.oldstreet, R.drawable.daughterbridge,
             R.drawable.cattlemarket, R.drawable.watertower, R.drawable.drawingcommunity,
             R.drawable.workshop, R.drawable.wudetemple, R.drawable.bridge, R.drawable.yimintemple, R.drawable.hodua,
-            R.drawable.bookstore1_1, R.drawable.mazu_park1, R.drawable.sport_park_1, R.drawable.cultural_center, R.drawable.zhenan_temple1};
+            R.drawable.bookstore1_1, R.drawable.mazu_park1, R.drawable.sport_park_1, R.drawable.cultural_center,
+            R.drawable.zhenan_temple1, R.drawable.backpack2_1};
     private int[] imMap = {R.drawable.temple_map, R.drawable.oldstreet_map, R.drawable.daughterbridge_map,
                         R.drawable.cattlemarket_map, R.drawable.watertower_map, R.drawable.drawingcommunity_map,
                         R.drawable.workshop_map, R.drawable.wudetemple_map, R.drawable.bridge_map, R.drawable.yimintemple_map,
                         R.drawable.hodua_map_1, R.drawable.bookstore_map_1, R.drawable.mazu_park_map_1, R.drawable.sport_park_map_1,
-                        R.drawable.cultural_center_map_1, R.drawable.cultural_center_map_1};
+                        R.drawable.cultural_center_map_1, R.drawable.zhenan_temple_map_1, R.drawable.backpack_map_1};
     private int[] sounds = {R.raw.sound1, R.raw.sound2, R.raw.sound3, R.raw.sound4, R.raw.sound5, R.raw.sound6, R.raw.sound7,
                             R.raw.sound8, R.raw.s9, R.raw.s10, R.raw.s11, R.raw.s12, R.raw.s13, R.raw.s14,
-                            R.raw.s15, R.raw.s16};
+                            R.raw.s15, R.raw.s16, R.raw.s17};
 
     ImageView imageView;
     ImageView imageView2;
     TextView  textView;
     TextView  textView2;
-    Button      playBtn;
+    ImageView playBtn;
     SeekBar     seekBar;
     MediaPlayer mediaPlayer;
     Runnable    runnable;
@@ -145,7 +146,7 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
             public void onCompletion(MediaPlayer mediaPlayer) {
 
                 handler.removeCallbacksAndMessages(null);
-                playBtn.setText("播放語音");
+                playBtn.setImageResource(R.drawable.play_1);
                 if(mediaPlayer.isPlaying()) {
                     mediaPlayer.stop();
                     seekBar.setProgress(mediaPlayer.getCurrentPosition());
@@ -197,6 +198,13 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
 
     public void GoToMapsActivity(View view) {
         Log.d(TAG,"MapsActivity: is preparing to run...");
+        if(mediaPlayer.isPlaying()){
+            mediaPlayer.pause();
+            handler.removeCallbacksAndMessages(null);
+            playBtn.setImageResource(R.drawable.play_1);
+            Log.d(TAG,"mediaPlayer is paused");
+            //Toast.makeText(this, "MediaPlayer paused", Toast.LENGTH_SHORT).show();
+        }
         Intent intent = new Intent(this, Maps2Activity.class);
         intent.putExtra("attraction_no", i);    //傳景點編號
         intent.putExtra("name", r_title);   //傳景點名稱
@@ -204,6 +212,13 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void GoToIGActivity(View view) {
+        if(mediaPlayer.isPlaying()){
+            mediaPlayer.pause();
+            handler.removeCallbacksAndMessages(null);
+            playBtn.setImageResource(R.drawable.play_1);
+            Log.d(TAG,"mediaPlayer is paused");
+            //Toast.makeText(this, "MediaPlayer paused", Toast.LENGTH_SHORT).show();
+        }
         Log.d(TAG,"IGActivity: is preparing to run...");
         Intent intent = new Intent(this, IGActivity.class);
         intent.putExtra("urlString",igurl);
@@ -212,6 +227,13 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void GoToFBActivity(View view) {
+        if(mediaPlayer.isPlaying()){
+            mediaPlayer.pause();
+            handler.removeCallbacksAndMessages(null);
+            playBtn.setImageResource(R.drawable.play_1);
+            Log.d(TAG,"mediaPlayer is paused");
+            //Toast.makeText(this, "MediaPlayer paused", Toast.LENGTH_SHORT).show();
+        }
         Log.d(TAG,"FGActivity: is preparing to run...");
         Intent intent = new Intent(this, FBActivity.class);
         intent.putExtra("urlString",fburl);
@@ -224,13 +246,13 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
         if(mediaPlayer.isPlaying()){
             mediaPlayer.pause();
             handler.removeCallbacksAndMessages(null);
-            playBtn.setText("播放語音");
+            playBtn.setImageResource(R.drawable.play_1);
             Log.d(TAG,"mediaPlayer is paused");
             //Toast.makeText(this, "MediaPlayer paused", Toast.LENGTH_SHORT).show();
         }
         else {
             mediaPlayer.start();
-            playBtn.setText("暫停播放");
+            playBtn.setImageResource(R.drawable.pause_1);
             changeSeekbar();
             Log.d(TAG,"mediaPlayer is starting");
             //Toast.makeText(this, "MediaPlayer playing", Toast.LENGTH_SHORT).show();
