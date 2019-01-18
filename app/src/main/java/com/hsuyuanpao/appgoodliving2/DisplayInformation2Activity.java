@@ -29,7 +29,7 @@ public class DisplayInformation2Activity extends AppCompatActivity {
         tvaddress.setText("地址: " + address);
         tvphone.setText("電話: " + phone);
         int no = getIntent().getIntExtra("no",0);
-        if(no == 17){
+        if(no == 29){
             iv.setImageResource(R.drawable.hst_schedule1);
         }
         else {

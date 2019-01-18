@@ -118,6 +118,21 @@
     <string-array name="list_lat">
         <item>23.56782</item>
         <item>23.581049</item>
+        <item>23.567308</item>
+        <item>23.565471</item>
+        <item>23.584274</item>
+        <item>23.561891</item>
+        <item>23.559895</item>
+        <item>23.567738</item>
+        <item>23.566663</item>
+        <item>23.566929</item>
+        <item>23.569803</item>
+        <item>23.570284</item>
+        <item>23.571664</item>
+        <item>23.573486</item>
+
+
+
         <item>23.576726</item>
         <item>23.578661</item>
         <item>23.573801</item>
@@ -142,6 +157,20 @@
     <string-array name="list_lng">
         <item>120.304643</item>
         <item>120.299154</item>
+        <item>120.305913</item>
+        <item>120.306411</item>
+        <item>120.300001</item>
+        <item>120.308685</item>
+        <item>120.324317</item>
+        <item>120.302858</item>
+        <item>120.301787</item>
+        <item>120.299963</item>
+        <item>120.302042</item>
+        <item>120.302999</item>
+        <item>120.304682</item>
+        <item>120.302205</item>
+
+
         <item>120.302984</item>
         <item>120.301254</item>
         <item>120.295431</item>
@@ -218,6 +247,18 @@
     <string-array name="h1_items">
         <item>北港朝天宮</item>
         <item>北港武德宮</item>
+        <item>北港彌陀寺</item>
+        <item>北港天理教會</item>
+        <item>北壇碧水寺</item>
+        <item>北港水仙宮</item>
+        <item>北港南潭水月庵</item>
+        <item>北港義民廟</item>
+        <item>北港鎮安宮</item>
+        <item>北港慈德禪寺</item>
+        <item>北港基督長老教會</item>
+        <item>北港昭烈宮</item>
+        <item>北港代天府</item>
+        <item>北港善牧天主堂</item>
     </string-array>
 
     <string-array name="h2_items">
@@ -243,7 +284,7 @@
         <item>145縣道</item>
         <item>159縣道</item>
         <item>高鐵接駁車資訊</item>
-        <item>北港媽祖醫院免費接駁資訊</item>
+        <item>媽祖醫院免費接駁資訊</item>
     </string-array>
 
     <string-array name="h5_items">

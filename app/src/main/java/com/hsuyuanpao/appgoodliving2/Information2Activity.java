@@ -33,34 +33,58 @@ public class Information2Activity extends AppCompatActivity {
 
         names.add("1.       朝天宮       >>");
         names.add("2.       武德宮       >>");
+        names.add("3.       北港彌陀寺       >>");
+        names.add("4.       北港天理教會       >>");
+        names.add("5.       北壇碧水寺       >>");
+        names.add("6.       北港水仙宮       >>");
+        names.add("7.       北港南潭水月庵       >>");
+        names.add("8.       北港義民廟       >>");
+        names.add("9.       北港鎮安宮       >>");
+        names.add("10.       北港慈德禪寺       >>");
+        names.add("11.       北港基督長老教會       >>");
+        names.add("12.       北港昭烈宮       >>");
+        names.add("13.       北港代天府       >>");
+        names.add("14.       北港善牧天主堂       >>");
 
-        names.add("3.     北港圖書館     >>");
-        names.add("4.    北港文化中心    >>");
-        names.add("5.      建國中學      >>");
-        names.add("6.      北港高中      >>");
-        names.add("7.      北港國中      >>");
-        names.add("8. 北港鎮公所免費停車場 >>");
-        names.add("9.    北港遊客中心    >>");
+        names.add("15.     北港圖書館     >>");
+        names.add("16.    北港文化中心    >>");
+        names.add("17.      建國中學      >>");
+        names.add("18.      北港高中      >>");
+        names.add("19.      北港國中      >>");
+        names.add("20. 北港鎮公所免費停車場 >>");
+        names.add("21.    北港遊客中心    >>");
 
-        names.add("10.  全家(北港天后店)  >>");
-        names.add("11.  7-11(朝天宮門市)  >>");
+        names.add("22.  全家(北港天后店)  >>");
+        names.add("23.  7-11(朝天宮門市)  >>");
 
-        names.add("12.   台西客運北港站   >>");
-        names.add("13.   統聯客運北港站   >>");
-        names.add("14.   嘉義客運北港站   >>");
-        names.add("15.      164 縣道      >>");
-        names.add("16.      145 縣道      >>");
-        names.add("17.      159 縣道      >>");
-        names.add("18.   高鐵接駁車資訊   >>");
-        names.add("19. 媽祖醫院免費接駁車 >>");
+        names.add("24.   台西客運北港站   >>");
+        names.add("25.   統聯客運北港站   >>");
+        names.add("26.   嘉義客運北港站   >>");
+        names.add("27.      164 縣道      >>");
+        names.add("28.      145 縣道      >>");
+        names.add("29.      159 縣道      >>");
+        names.add("30.   高鐵接駁車資訊   >>");
+        names.add("31. 媽祖醫院免費接駁車 >>");
 
-        names.add("20.     港媽祖醫院     >>");
-        names.add("21         診所        >>");
-        names.add("21         藥局        >>");
+        names.add("32.     港媽祖醫院     >>");
+        names.add("33         診所        >>");
+        names.add("34         藥局        >>");
 
 
         name_only.add("朝天宮");
         name_only.add("武德宮");
+        name_only.add("北港彌陀寺");
+        name_only.add("北港天理教會");
+        name_only.add("北壇碧水寺");
+        name_only.add("北港水仙宮");
+        name_only.add("北港南潭水月庵");
+        name_only.add("北港義民廟");
+        name_only.add("北港鎮安宮");
+        name_only.add("北港慈德禪寺");
+        name_only.add("北港基督長老教會");
+        name_only.add("北港昭烈宮");
+        name_only.add("北港代天府");
+        name_only.add("北港善牧天主堂");
 
         name_only.add("北港圖書館");
         name_only.add("北港文化中心");
@@ -89,6 +113,20 @@ public class Information2Activity extends AppCompatActivity {
 
         address.add("651雲林縣北港鎮中山路178號");
         address.add("651雲林縣北港鎮華勝路330號");
+        address.add("651雲林縣北港鎮中秋路94號");
+        address.add("651雲林縣北港鎮中秋路1-2號");
+        address.add("651雲林縣北港鎮新德路3號");
+        address.add("616嘉義縣新港鄉南港村舊南港58號");
+        address.add("616嘉義縣新港鄉頂菜園1號");
+        address.add("651雲林縣北港鎮旌義街20號");
+        address.add("651雲林縣北港鎮館前街22號");
+        address.add("651雲林縣北港鎮光明路162號");
+        address.add("651雲林縣北港鎮中正路94號");
+        address.add("651雲林縣北港鎮公民路61號");
+        address.add("651雲林縣北港鎮復興街20號");
+        address.add("651雲林縣北港鎮民有路19號");
+
+
 
         address.add("651雲林縣北港鎮北辰路2-5號");
         address.add("651雲林縣北港鎮公園路66號");
@@ -117,6 +155,20 @@ public class Information2Activity extends AppCompatActivity {
 
         phone.add("05 783 2055");
         phone.add("05 782 1445");
+        phone.add("05 783 3038");
+        phone.add("05 783 4166");
+        phone.add("05 783 3566");
+        phone.add("05 781 1751");
+        phone.add("05 781 1800");
+        phone.add("05 783 8213");
+        phone.add("05 783 7184");
+        phone.add("05 783 6011");
+        phone.add("");
+        phone.add("05 782 1611");
+        phone.add("05 783 1256");
+        phone.add("05 783 4283");
+
+
 
         phone.add("05 782 2836");
         phone.add("05 783 2999");
