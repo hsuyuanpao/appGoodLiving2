@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hsuyuanpao.appgoodliving2">
-<!--
+
+    <!--
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.camera2" />
     <uses-feature android:name="android.hardware.camera2.focus" />
--->
+    -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -34,9 +35,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AttrcationsNearByCVActivity" />
         </activity>
-<!--
-        <activity android:name=".QRCodeScanActivity" />
--->
+        <!--         <activity android:name=".QRCodeScanActivity" /> -->
         <activity
             android:name=".GoToGoodLivingActivity"
             android:parentActivityName=".MainActivity">
@@ -124,7 +123,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".EatActivity" />
         </activity>
-
         <activity
             android:name=".DisplayStoreActivity"
             android:parentActivityName=".BreakfastActivity">
@@ -137,15 +135,13 @@
             android:name=".DisplayInformationActivity"
             android:label="@string/title_activity_display_information" />
         <activity android:name=".DisplayInformation2Activity" />
-
         <activity android:name=".GoodLivingFBActivity" />
         <activity android:name=".LunchActivity" />
         <activity android:name=".AfternoonteaActivity" />
         <activity android:name=".DinnerActivity" />
-<!--
-        <activity android:name=".MatsuActivity" />
--->
-        <activity android:name=".Information2Webpage"></activity>
+        <!--         <activity android:name=".MatsuActivity" /> -->
+        <activity android:name=".Information2Webpage" />
+        <activity android:name=".BackpackFBActivity"></activity>
     </application>
 
 </manifest>

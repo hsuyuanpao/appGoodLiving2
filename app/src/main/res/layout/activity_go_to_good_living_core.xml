@@ -41,7 +41,7 @@
         android:background="#ffffff"
         android:orientation="horizontal"
 
-        android:weightSum="99">
+        android:weightSum="100">
 
     <android.support.v7.widget.CardView
         android:layout_gravity="center"
@@ -53,21 +53,18 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         app:cardCornerRadius="5dp"
-        android:layout_weight="33"
+        android:layout_weight="25"
         android:layout_height="match_parent"
 
         android:id="@+id/cardView1">
-        <TextView
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#f0770e"
+            android:background="@drawable/orange_1"
             android:elevation="3dp"
             android:onClick="GoToGoodLivingWebsite"
             android:padding="3dp"
-            android:text="前往\n好住民宿\n網頁\n---->"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:textColor="#000000"
+
             android:translationZ="3dp" />
     </android.support.v7.widget.CardView>
 
@@ -81,24 +78,20 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             app:cardCornerRadius="5dp"
-            android:layout_weight="33"
+            android:layout_weight="25"
             android:layout_height="match_parent"
 
             android:id="@+id/cardView2">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/blue_1"
+                android:elevation="3dp"
+                android:onClick="GoToGoodLivingFB"
+                android:padding="3dp"
 
-            android:background="#f09d0e"
-            android:elevation="3dp"
-            android:onClick="GoToGoodLivingBackpackWebsite"
-            android:padding="3dp"
-            android:text="前往好住\n背包客棧\n網頁\n---->"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:textColor="#000000"
-            android:translationZ="3dp" />
+                android:translationZ="3dp" />
         </android.support.v7.widget.CardView>
 
 
@@ -112,23 +105,44 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             app:cardCornerRadius="5dp"
-            android:layout_weight="33"
+            android:layout_weight="25"
             android:layout_height="match_parent"
 
             android:id="@+id/cardView3">
-        <TextView
-            android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/orange2_1"
+                android:elevation="3dp"
+                android:onClick="GoToGoodLivingBackpackWebsite"
+                android:padding="3dp"
+
+                android:translationZ="3dp" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_gravity="center"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_width="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:cardCornerRadius="5dp"
+            android:layout_weight="25"
             android:layout_height="match_parent"
 
-            android:background="#072250"
-            android:elevation="3dp"
-            android:onClick="GoToGoodLivingFB"
-            android:padding="3dp"
-            android:textSize="18sp"
-            android:text="前往\n好住民宿\n臉書\n---->"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:translationZ="3dp" />
+            android:id="@+id/cardView4">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/blue2_1"
+                android:elevation="3dp"
+                android:onClick="GoToGoodLivingBackpackFB"
+                android:padding="3dp"
+
+                android:translationZ="3dp" />
         </android.support.v7.widget.CardView>
 
     </LinearLayout>

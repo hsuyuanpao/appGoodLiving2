@@ -65,4 +65,9 @@ public class GoToGoodLivingActivity extends AppCompatActivity {
         Intent intent = new Intent(this, GoodLivingFBActivity.class);
         startActivity(intent);
     }
+
+    public void GoToGoodLivingBackpackFB(View view) {
+        Intent intent = new Intent(this, BackpackFBActivity.class);
+        startActivity(intent);
+    }
 }
