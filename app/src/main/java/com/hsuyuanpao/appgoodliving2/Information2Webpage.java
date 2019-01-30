@@ -85,14 +85,14 @@ public class Information2Webpage extends AppCompatActivity {
         int no = getIntent().getIntExtra("no", 0);   // information location no.
 
         Log.d(TAG, "name: " + name + "no:" + no);
-        if(no == 20)
+        if(no == 32)
         {
             String url = "http://5151.tw/city2.php?areaid=&areaid2=651&type=CM";
             mWebView.loadUrl(url);
         }
         else
         {
-            String url = "https://sheethub.com/data.fda.gov.tw/%E8%97%A5%E5%B1%80%E5%9F%BA%E6%9C%AC%E8%B3%87%E6%96%99/i/87/%E9%9B%B2%E6%9E%97%E7%B8%A3/%E5%8C%97%E6%B8%AF%E9%8E%AE";
+            String url = "http://drug.lifego.tw/%E8%97%A5%E5%B1%80%E5%88%97%E8%A1%A8-%E9%9B%B2%E6%9E%97%E7%B8%A3-%E5%8C%97%E6%B8%AF%E9%8E%AE";
             mWebView.loadUrl(url);
         }
 

@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <drawable name="primary_blue">#3F51B5</drawable>
+    <drawable name="deep_blue">#050d3e</drawable>
+    <drawable name="light_green">#e8f6ee</drawable>
+    <drawable name="pink">#FF4081</drawable>
+    <drawable name="deep_pink">#5e0d28</drawable>
+    <drawable name="green">#062c01</drawable>
+
+    <drawable name="deep_coffee">#3b1e12</drawable>
+    <drawable name="white">#ffffff</drawable>
 </resources>

@@ -108,6 +108,7 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
         imTop1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                view.setSelected(true); // change background color when clicked
                 if(mediaPlayer.isPlaying())
                     mediaPlayer.stop();
                 handler.removeCallbacksAndMessages(null);
@@ -125,6 +126,7 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
                 handler.removeCallbacksAndMessages(null);
                 //mediaPlayer.release();
                 //mediaPlayer = null;
+                view.setSelected(true); // change background color when clicked
                 Intent intent2 = new Intent(DisplayActivity.this, MainActivity.class);
                 startActivity(intent2);
             }
@@ -205,6 +207,7 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
             Log.d(TAG,"mediaPlayer is paused");
             //Toast.makeText(this, "MediaPlayer paused", Toast.LENGTH_SHORT).show();
         }
+        view.setSelected(true); // change background color when clicked
         Intent intent = new Intent(this, Maps2Activity.class);
         intent.putExtra("attraction_no", i);    //傳景點編號
         intent.putExtra("name", r_title);   //傳景點名稱
@@ -220,6 +223,7 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
             //Toast.makeText(this, "MediaPlayer paused", Toast.LENGTH_SHORT).show();
         }
         Log.d(TAG,"IGActivity: is preparing to run...");
+        view.setSelected(true); // change background color when clicked
         Intent intent = new Intent(this, IGActivity.class);
         intent.putExtra("urlString",igurl);
         intent.putExtra("title",r_title);
@@ -235,6 +239,7 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
             //Toast.makeText(this, "MediaPlayer paused", Toast.LENGTH_SHORT).show();
         }
         Log.d(TAG,"FGActivity: is preparing to run...");
+        view.setSelected(true); // change background color when clicked
         Intent intent = new Intent(this, FBActivity.class);
         intent.putExtra("urlString",fburl);
         intent.putExtra("title",r_title);

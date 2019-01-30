@@ -391,13 +391,13 @@ public class DisplayInformationActivity extends FragmentActivity implements OnMa
                             new AlertDialog.Builder(DisplayInformationActivity.this)
                                     .setTitle("提醒")
                                     .setMessage("手機定位未開，請至手機之設定功能選單，開啟定位功能!")
-                                    /*.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                                    .setPositiveButton("確定", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialogInterface, int i) {
                                            finish();
                                         }
-                                    })*/
-                                    .setNegativeButton("確定",null)
+                                    })
+                                    //.setNegativeButton("確定",null)
                                     .show();
                         }
                     }

@@ -93,6 +93,8 @@ public class BreakfastActivity extends AppCompatActivity {
                 Log.d(TAG, "onItemClick: name: " + names.get(i));
                // Toast.makeText(BreakfastActivity.this, "You clicked on: " + names.get(i), Toast.LENGTH_SHORT).show();
 
+                view.setSelected(true);
+
                 Intent intent = new Intent(BreakfastActivity.this, DisplayStoreActivity.class);
                 intent.putExtra("name", name_only.get(i).toString());
                 intent.putExtra("address", addresses.get(i).toString());

@@ -81,6 +81,7 @@ public class AttrcationsNearByCVActivity extends AppCompatActivity{
         imTop1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                view.setSelected(true);
                 finish();
             }
         });
@@ -88,6 +89,7 @@ public class AttrcationsNearByCVActivity extends AppCompatActivity{
         imTop2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                view.setSelected(true);
                 Intent intent2 = new Intent(AttrcationsNearByCVActivity.this, MainActivity.class);
                 startActivity(intent2);
             }

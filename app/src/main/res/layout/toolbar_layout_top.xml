@@ -30,6 +30,8 @@
             android:layout_gravity="left"
             android:src="@drawable/arrow_left_white_28x28"
             android:id="@+id/imviewTop1"
+            android:focusable="false"
+            android:background="@drawable/my_selector2"
             android:onClick="LastPage"/>
 
         <TextView
@@ -50,6 +52,8 @@
             android:layout_gravity="left"
             android:src="@drawable/home_icon_white_28x28"
             android:id="@+id/imviewTop2"
+            android:focusable="false"
+            android:background="@drawable/my_selector2"
             android:onClick="HomePage"/>
 
 

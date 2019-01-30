@@ -116,7 +116,7 @@ public class DinnerActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Log.d(TAG, "onItemClick: name: " + names.get(i));
                 // Toast.makeText(GoToBreakfastActivity.this, "You clicked on: " + names.get(i), Toast.LENGTH_SHORT).show();
-
+                view.setSelected(true);
                 Intent intent = new Intent(DinnerActivity.this, DisplayStoreActivity.class);
                 intent.putExtra("name", name_only.get(i).toString());
                 intent.putExtra("address", addresses.get(i).toString());

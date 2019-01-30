@@ -255,6 +255,7 @@ public class Information2Activity extends AppCompatActivity {
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
                // Toast.makeText(Information2Activity.this," You expand: " + childLIst.get(headingList.get(i)).get(i1) +
                //         " from "+ headingList.get(i), Toast.LENGTH_LONG).show();
+                view.setSelected(true);
                 switch (i)
                 {
                     case 3: if(i1 == 6 || i1 == 7)

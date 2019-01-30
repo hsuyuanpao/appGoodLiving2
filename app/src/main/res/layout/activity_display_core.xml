@@ -106,6 +106,8 @@
                 android:padding="5dp"
                 android:id="@+id/maplogo"
                 android:src="@drawable/google_map_logo2"
+                android:focusable="false"
+                android:background="@drawable/my_selector_attractions"
                 android:onClick="GoToMapsActivity"/>
 
             <ImageView
@@ -115,7 +117,8 @@
                 android:padding="5dp"
                 android:id="@+id/iglogo"
                 android:src="@drawable/ig_logo2"
-
+                android:focusable="false"
+                android:background="@drawable/my_selector_attractions"
 
                 android:onClick="GoToIGActivity"/>
             <ImageView
@@ -126,6 +129,8 @@
                 android:id="@+id/fblogo"
                 android:src="@drawable/fb_logo2"
                 android:layout_marginRight="5dp"
+                android:focusable="false"
+                android:background="@drawable/my_selector_attractions"
                 android:onClick="GoToFBActivity"/>
 
 

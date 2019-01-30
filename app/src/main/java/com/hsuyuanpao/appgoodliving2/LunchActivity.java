@@ -81,7 +81,7 @@ public class LunchActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Log.d(TAG, "onItemClick: name: " + names.get(i));
                 // Toast.makeText(GoToBreakfastActivity.this, "You clicked on: " + names.get(i), Toast.LENGTH_SHORT).show();
-
+                view.setSelected(true); // change background color when clicked
                 Intent intent = new Intent(LunchActivity.this, DisplayStoreActivity.class);
                 intent.putExtra("name", name_only.get(i).toString());
                 intent.putExtra("address", addresses.get(i).toString());

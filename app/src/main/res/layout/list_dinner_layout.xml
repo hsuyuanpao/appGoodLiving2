@@ -6,5 +6,6 @@
     android:textStyle="bold"
 
     android:textColor="#cac8f1"
-    android:background="#020e33"
+    android:focusable="false"
+    android:background="@drawable/my_selector_dinner"
     android:gravity="center"/>

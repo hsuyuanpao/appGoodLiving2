@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {    //景點介紹
+                view.setSelected(true);
                 Intent intent6 = new Intent(MainActivity.this, AttrcationsNearByCVActivity.class);
                 startActivity(intent6);
             }
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {    //吃喝推薦
+                view.setSelected(true);
                 Intent intent7 = new Intent(MainActivity.this, EatActivity.class);
                 startActivity(intent7);
             }
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {    //前往好住
+                view.setSelected(true);
                 Intent intent8 = new Intent(MainActivity.this, GoToGoodLivingActivity.class);
                 startActivity(intent8);
             }
@@ -98,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayout4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {    //報馬仔
+                view.setSelected(true);
                 Intent intent9 = new Intent(MainActivity.this, Information2Activity.class);
                 startActivity(intent9);
             }
