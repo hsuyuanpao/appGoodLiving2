@@ -68,6 +68,7 @@
                     android:background="@drawable/eat1"
                     android:scaleType="centerInside"
                     android:onClick="GoToBreakfast"
+                    android:id="@+id/imBreakfast"
                     />
             </android.support.v7.widget.CardView>
 
@@ -89,7 +90,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/eat2"
-                    android:onClick="GoToLunch"/>
+                    android:onClick="GoToLunch"
+                    android:id="@+id/imLunch"/>
             </android.support.v7.widget.CardView>
         </LinearLayout>
 
@@ -122,6 +124,7 @@
                     android:background="@drawable/eat3"
                     android:scaleType="centerInside"
                     android:onClick="GoToAfternoontea"
+                    android:id="@+id/imAfternoontea"
                     />
             </android.support.v7.widget.CardView>
 
@@ -141,7 +144,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/eat4"
-                    android:onClick="GoToDinner"/>
+                    android:onClick="GoToDinner"
+                    android:id="@+id/imDinner"/>
             </android.support.v7.widget.CardView>
         </LinearLayout>
 

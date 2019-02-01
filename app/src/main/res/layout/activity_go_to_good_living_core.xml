@@ -65,7 +65,8 @@
             android:onClick="GoToGoodLivingWebsite"
             android:padding="3dp"
 
-            android:translationZ="3dp" />
+            android:translationZ="3dp"
+            android:id="@+id/imH1"/>
     </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -91,7 +92,8 @@
                 android:onClick="GoToGoodLivingFB"
                 android:padding="3dp"
 
-                android:translationZ="3dp" />
+                android:translationZ="3dp"
+                android:id="@+id/imH2"/>
         </android.support.v7.widget.CardView>
 
 
@@ -117,7 +119,8 @@
                 android:onClick="GoToGoodLivingBackpackWebsite"
                 android:padding="3dp"
 
-                android:translationZ="3dp" />
+                android:translationZ="3dp"
+                android:id="@+id/imH3"/>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -142,7 +145,8 @@
                 android:onClick="GoToGoodLivingBackpackFB"
                 android:padding="3dp"
 
-                android:translationZ="3dp" />
+                android:translationZ="3dp"
+                android:id="@+id/imH4"/>
         </android.support.v7.widget.CardView>
 
     </LinearLayout>

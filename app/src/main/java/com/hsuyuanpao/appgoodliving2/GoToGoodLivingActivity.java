@@ -1,6 +1,7 @@
 package com.hsuyuanpao.appgoodliving2;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -51,22 +52,64 @@ public class GoToGoodLivingActivity extends AppCompatActivity {
     }
 
     public void GoToGoodLivingWebsite(View view) {
+        final ImageView im = findViewById(R.id.imH1);
+        im.setBackgroundResource(R.drawable.orange_1_2);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Do something after 100ms
+                im.setBackgroundResource(R.drawable.orange_1);
+            }
+        }, 100);
         Intent intent = new Intent(this, GoToGoodLivingWebsiteActivity.class);
         startActivity(intent);
 
     }
 
-    public void GoToGoodLivingBackpackWebsite(View view) {
-        Intent intent = new Intent(this, GoToGoodLivingBackpackWebsiteActivity.class);
-        startActivity(intent);
-    }
-
     public void GoToGoodLivingFB(View view) {
+        final ImageView im = findViewById(R.id.imH2);
+        im.setBackgroundResource(R.drawable.blue_1_2);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Do something after 100ms
+                im.setBackgroundResource(R.drawable.blue_1);
+            }
+        }, 100);
         Intent intent = new Intent(this, GoodLivingFBActivity.class);
         startActivity(intent);
     }
 
+
+    public void GoToGoodLivingBackpackWebsite(View view) {
+        final ImageView im = findViewById(R.id.imH3);
+        im.setBackgroundResource(R.drawable.orange2_1_2);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Do something after 100ms
+                im.setBackgroundResource(R.drawable.orange2_1);
+            }
+        }, 100);
+        Intent intent = new Intent(this, GoToGoodLivingBackpackWebsiteActivity.class);
+        startActivity(intent);
+    }
+
+
     public void GoToGoodLivingBackpackFB(View view) {
+        final ImageView im = findViewById(R.id.imH4);
+        im.setBackgroundResource(R.drawable.blue2_1_2);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Do something after 100ms
+                im.setBackgroundResource(R.drawable.blue2_1);
+            }
+        }, 100);
         Intent intent = new Intent(this, BackpackFBActivity.class);
         startActivity(intent);
     }
